@@ -15,5 +15,9 @@ This course is largely based on the following materials:
 I also highly recommend the books of [Hadley Wickham](http://hadley.nz/). You can find his books on his website for free! 
 
 
+Nicolas Descostes
 
+nicolas.descostes@embl.it
+
+<a href="https://twitter.com/NDescostes?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @NDescostes</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
