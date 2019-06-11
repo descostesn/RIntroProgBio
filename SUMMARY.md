@@ -31,7 +31,7 @@
   * [Conversions](conversions.md)
   * [Apply family](applyfamily.md)
   * [Manipulating files](manipulatingfiles.md)
-  * [Types](types)
+  * [On Types](types.md)
   * [Interacting with the environment](interactingwiththeenvironmnet.md)
   
   
