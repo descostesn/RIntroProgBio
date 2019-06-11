@@ -11,6 +11,7 @@
   * [Matrices](matrices.md)
   * [Data frames](dataframes.md)
   * [Lists](lists.md)
+  * [Exercises](exo1.md)
 * [More advanced data type](moreadvancesdatatype.md)
   * [Factors](factors.md)
   * [Booleans](booleans.md)
