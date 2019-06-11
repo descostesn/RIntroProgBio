@@ -1,3 +1,4 @@
+# Introduction
 
 This workshop aims at giving an introduction to programming (with R) to the biologists of EMBL (and others). This course gives the fundamentals of programming focusing on biological problems. The intuition behind the code is favored at the expense of formal definitions. 
 You will find in this material definition of concepts with exercises. This is a 'hands on' workshop, just ask if you need any help. **Try the commands yourself, this is the best way to learn**.
@@ -14,7 +15,5 @@ This course is largely based on the following materials:
 I also highly recommend the books of [Hadley Wickham](http://hadley.nz/). You can find his books on his website for free! 
 
 
-
-# Introduction
 
 
