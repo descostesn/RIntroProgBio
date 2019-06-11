@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>for loop · GitBook</title>
+        <title>Interacting with the environment · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whileloop.html" />
     
-    
-    <link rel="prev" href="ifelse.html" />
+    <link rel="prev" href="types.html" />
     
 
     </head>
@@ -374,7 +372,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="forloop.html">
+        <li class="chapter " data-level="1.5.3" data-path="forloop.html">
             
                 <a href="forloop.html">
             
@@ -536,7 +534,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.10" data-path="interactingwiththeenvironmnet.html">
+        <li class="chapter active" data-level="1.6.10" data-path="interactingwiththeenvironmnet.html">
             
                 <a href="interactingwiththeenvironmnet.html">
             
@@ -584,7 +582,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >for loop</a>
+        <a href="." >Interacting with the environment</a>
     </h1>
 </div>
 
@@ -599,41 +597,87 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="for-loop">for loop</h1>
-<p>The structure is:</p>
-<pre><code>for(condition){
-    do something
-}
-</code></pre><p>I am going to make the following very confusing statement: </p>
-<p><strong>DO NOT USE FOR LOOPS IN R UNLESS YOU CANNOT DO OTHERWISE</strong></p>
-<p><strong>Why? Because -for- is very slow in R! There is much better, you will learn what later! If you cannot wait, look at the functions apply, lapply and sapply.</strong></p>
-<p><strong>So why having a section about &apos;for&apos; then? Because the concept of loop is one of the most important in programming and because sometimes you will need to use -for- even if it is not super efficient.</strong></p>
-<p>To understand the concept and utility of looping, try to code the following task yourself without looking at the code below. Create a vector of gene names and print each name on the console (use the function &apos;print&apos;). To be consistent, re-use the following vector: </p>
-<pre><code>gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;).
-</code></pre><p>You probably ended doing something like this:</p>
-<pre><code>&gt; ## Create the vector
-&gt; gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;)
-&gt; ## Visualize it
-&gt; gene_names
-&gt; ## Display the first gene
-&gt; gene_names[1]
-&gt; ## Display the second gene
-&gt; gene_names[2]
-&gt; ## Display the third gene
-&gt; gene_names[3]
-&gt; ## Display the fourth gene
-&gt; gene_names[4]
-</code></pre><p>Do you see the problem? That is very repetitive and a lot of code. Fortunately, a loop enables you to do this automatically:</p>
-<pre><code>&gt; ## Let see first how the &apos;condition&apos; works
-&gt; for(i in 1:4){
-+ print(i)
-}
-&gt; ## Now you have understood what it does, use it to access your gene names
-&gt;  for(i in 1:4){
-+ print(gene_names[i])
-+}
-</code></pre><p><strong>WOW!</strong> Super efficient isn&apos;t it? Now that you know how a loop works, you are going to see that using while is also very powerful.</p>
-
+                                <h1 id="interacting-with-the-environment">Interacting with the environment</h1>
+<p>R offers important features to have in mind to control your working environment. You can control the directory that you are working in with <strong>getwd()</strong> (get working directory) and <strong>setwd()</strong> (set working directory). As you will read and write data to different folders, it is important to know where you are in your folder tree. This becomes even more useful when your scripts use relative paths instead of absolute paths.</p>
+<p>During your programming session, you will create a certain number of variables. To list all variables created during your session, you can use the command <strong>ls()</strong>. Some variables can store results of functions which can run for hours or even days! These results are precious and you will very often do not want to restart the whole process from scratch. Fortunately, R provides the functions <strong>save</strong> and <strong>load</strong> to store and use variables.</p>
+<p>A very important feature of R is that it <strong>loads your data to the live memory of your computer</strong>. Be careful not to load data that are too big, your computer will freeze and you will get stuck! To avoid over using the capacity of your computer, you will want to delete some variables containing data that are too big (when you do not need them anymore). To do so, use <strong>rm</strong> and the garbage collector <strong>gc()</strong>. The first takes variable names as parameter to delete them and the second frees the memory after deletion.</p>
+<pre><code>&gt; ## Get the working directory
+&gt; getwd()
+&gt; ## Set the working directory
+&gt; dir.create(&quot;folder_to_enter_in&quot;)
+&gt; setwd(&quot;./folder_to_enter_in&quot;)
+&gt;
+&gt; ## List all variables present in the current session
+&gt; ls()
+&gt;
+&gt; ## Save a variable
+&gt; test &lt;- c(1,2,3)
+&gt; save(test, file=&quot;test.Rdat&quot;)
+&gt; ## load a variable
+&gt; load(&quot;test.Rdat&quot;)
+&gt;
+&gt; ## Delete a variable
+&gt; rm(test)
+&gt; ## Free unused memory
+&gt; gc()
+</code></pre><p>The power of R stands in the fact that it benefits from a huge community of users. Users make packages available to the community. I mentioned in session 1 two repositories which are <a href="https://cran.r-project.org/web/packages/available_packages_by_date.html" target="_blank">CRAN</a> and <a href="https://www.bioconductor.org/packages/release/BiocViews.html#___Software" target="_blank">Bioconductor</a>. To install a package from CRAN or Bioconductor, you will do it from the R console (other ways to install packages are not covered here). For CRAN, you will use the function <strong>install.packages</strong> and for Bioconductor, you will use the package <a href="https://cran.r-project.org/web/packages/BiocManager/index.html" target="_blank">BiocManager</a>. A package can be uninstalled with <strong>remove.packages</strong>. Finally, a package is loaded in R with the function <strong>library</strong>.</p>
+<p>Packages are dependent on the R and/or Bioconductor version. You will see that some code that was running fine on one R version will give you some errors on others. This is because the community is active and publishes updates regularly. R gives a major release every Spring, with several patches along the year, and Bioconductor is updated every 6 months. You can check your R version with <strong>R.Version()</strong> and the version of a particular package with <strong>packageVersion</strong>. 
+It is also useful to know where packages are installed,  use <strong>.libPaths()</strong>.  </p>
+<pre><code>&gt; ## Install a package from CRAN
+&gt; install.packages(&quot;ggplot2&quot;, dependencies = TRUE)
+&gt; install.packages(&quot;BiocManager&quot;, dependencies = TRUE)
+&gt;
+&gt; ## Load the package BiocManager
+&gt; library(&quot;BiocManager&quot;)
+&gt;
+&gt; ## Install the Bioconductor package &quot;DESeq2&quot; and &quot;edgeR&quot;
+&gt; install(&quot;DESeq2&quot;)
+&gt; install(&quot;edgeR&quot;)
+&gt;
+&gt; ## Remove the package edgeR
+&gt; remove.packages(&quot;edgeR&quot;)
+&gt;
+&gt; ## Check your R version
+&gt; R.Version()
+&gt;
+&gt; ## check edgeR package version
+&gt; packageVersion(&quot;edgeR&quot;)
+&gt;
+&gt; ## Check where the packages were installed
+&gt; .libPaths()
+</code></pre><p>There are different ways to get help in R. You can check the documentation of a particular function with <strong>?myfunction</strong> or <strong>help</strong>. If you do not remember the exact name of a function, you can use <strong>apropos</strong> which will list every function containing the word that you gave as parameter. You can see an example code with the function <strong>example</strong>. You can also use a web browser to look for documentation with <strong>help.start()</strong>. The R community also provides tutorials called <strong>vignette</strong>. You can see a list of vignettes with the function <strong>vignette()</strong> and visualize a particular one with <strong>vignette(&quot;mypackagename&quot;)</strong>. You can also see all available functions of a package by using the double columns &quot;<strong>mypackage::</strong>&quot; and pressing tab.</p>
+<pre><code>&gt; ## Load the package DESeq2
+&gt; library(&quot;DESeq2&quot;)
+&gt;
+&gt; ## Check all the functions available in edgeR (using the tab command)
+&gt; DESeq2::
+&gt;
+&gt; ## Start the R documentation page
+&gt; help.start()
+&gt;
+&gt; ## Get help on the function DESeqDataSetFromMatrix
+&gt; ?DESeqDataSetFromMatrix
+&gt; help(&quot;DESeqDataSetFromMatrix&quot;)
+&gt;
+&gt; ## Visualize an example using DESeqDataSetFromMatrix
+&gt; example(&quot;DESeqDataSetFromMatrix&quot;)
+&gt;
+&gt; ## Find all functions using the string &apos;write&apos;
+&gt; apropos(&quot;write&quot;)
+&gt;
+&gt; ## See all available vignette
+&gt; vignette()
+&gt; ## Check a particular vignette
+&gt; vignette(&quot;DESeq2&quot;)
+</code></pre><p>Finally, all the commands that you entered can be retrieved with the function <strong>history</strong>. To quit R enter <strong>q()</strong>. If you enter <strong>yes</strong>, you can save your R session which is actually very nice to not have to enter again all your commands.</p>
+<pre><code>&gt; ## Visualize the last commands entered
+&gt; history()
+&gt; ## Visualize the 200 last commands entered
+&gt; history(200)
+&gt; ## Quit session
+&gt; q()                                                 
+Save workspace image? [y/n/c]:
+</code></pre>
                                 
                                 </section>
                             
@@ -660,14 +704,10 @@
 
             
                 
-                <a href="ifelse.html" class="navigation navigation-prev " aria-label="Previous page: if-else">
+                <a href="types.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: On Types">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="whileloop.html" class="navigation navigation-next " aria-label="Next page: while loop">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -676,7 +716,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"for loop","level":"1.5.3","depth":2,"next":{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]},"previous":{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"forloop.md","mtime":"2019-06-11T14:06:53.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"previous":{"title":"On Types","level":"1.6.9","depth":2,"path":"types.md","ref":"types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interactingwiththeenvironmnet.md","mtime":"2019-06-11T15:09:39.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

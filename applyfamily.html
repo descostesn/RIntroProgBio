@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>for loop · GitBook</title>
+        <title>Apply family · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whileloop.html" />
+    <link rel="next" href="manipulatingfiles.html" />
     
     
-    <link rel="prev" href="ifelse.html" />
+    <link rel="prev" href="conversions.html" />
     
 
     </head>
@@ -374,7 +374,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="forloop.html">
+        <li class="chapter " data-level="1.5.3" data-path="forloop.html">
             
                 <a href="forloop.html">
             
@@ -497,7 +497,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.7" data-path="applyfamily.html">
+        <li class="chapter active" data-level="1.6.7" data-path="applyfamily.html">
             
                 <a href="applyfamily.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >for loop</a>
+        <a href="." >Apply family</a>
     </h1>
 </div>
 
@@ -599,41 +599,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="for-loop">for loop</h1>
-<p>The structure is:</p>
-<pre><code>for(condition){
-    do something
-}
-</code></pre><p>I am going to make the following very confusing statement: </p>
-<p><strong>DO NOT USE FOR LOOPS IN R UNLESS YOU CANNOT DO OTHERWISE</strong></p>
-<p><strong>Why? Because -for- is very slow in R! There is much better, you will learn what later! If you cannot wait, look at the functions apply, lapply and sapply.</strong></p>
-<p><strong>So why having a section about &apos;for&apos; then? Because the concept of loop is one of the most important in programming and because sometimes you will need to use -for- even if it is not super efficient.</strong></p>
-<p>To understand the concept and utility of looping, try to code the following task yourself without looking at the code below. Create a vector of gene names and print each name on the console (use the function &apos;print&apos;). To be consistent, re-use the following vector: </p>
-<pre><code>gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;).
-</code></pre><p>You probably ended doing something like this:</p>
-<pre><code>&gt; ## Create the vector
-&gt; gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;)
-&gt; ## Visualize it
-&gt; gene_names
-&gt; ## Display the first gene
-&gt; gene_names[1]
-&gt; ## Display the second gene
-&gt; gene_names[2]
-&gt; ## Display the third gene
-&gt; gene_names[3]
-&gt; ## Display the fourth gene
-&gt; gene_names[4]
-</code></pre><p>Do you see the problem? That is very repetitive and a lot of code. Fortunately, a loop enables you to do this automatically:</p>
-<pre><code>&gt; ## Let see first how the &apos;condition&apos; works
-&gt; for(i in 1:4){
-+ print(i)
-}
-&gt; ## Now you have understood what it does, use it to access your gene names
-&gt;  for(i in 1:4){
-+ print(gene_names[i])
-+}
-</code></pre><p><strong>WOW!</strong> Super efficient isn&apos;t it? Now that you know how a loop works, you are going to see that using while is also very powerful.</p>
-
+                                <h1 id="apply-family">Apply Family</h1>
+<p>We saw in session 2 how to parse structures of data with &quot;for&quot; loops. As a reminder, this is how you would print the column mean values of a matrix and of a list using &quot;for&quot;:</p>
+<pre><code>&gt; ## Creation of a matrix
+&gt; mat &lt;- matrix(data=1:6, nrow=2, ncol=3, byrow=T)
+&gt;
+&gt; ## Display the column mean values
+&gt; for(i in seq_len(ncol(mat))){
++ cat(mean(mat[,i]), &quot;\n&quot;)
++ }
+&gt;
+&gt; ## Creation of a list with two elements
+&gt; mylist &lt;- list(c(23,24,56), c(89,45,65))
+&gt;
+&gt; ## Display the mean value of each vector of the list
+&gt; for(i in seq_len(length(mylist))){ 
++ cat(mean(mylist[[i]]), &quot;\n&quot;)
++ }
+</code></pre><p>If you remember, I warned you that using &quot;for&quot; is not a good idea because of its poor computational performances. Instead, the function <strong>apply</strong> enables to do the same thing. It takes three main arguments: the matrix, the MARGIN and the function. MARGIN should take the value 1 if the matrix should be read by row, or the value 2 by column. The function used below is the same as in the example above: <strong>mean</strong>. Enter ?apply in your console to read the documentation of this function.</p>
+<pre><code>&gt; apply(mat, MARGIN = 2, mean)
+</code></pre><p>That much more efficient isn&apos;t it? The same thing can be done on list with the function <strong>lapply</strong> (apply on list, l = list). Because a list does not have 2 dimensions, the option MARGIN is not used:</p>
+<pre><code>&gt; result &lt;- lapply(mylist, mean)
+</code></pre><p>Now let see what is the type of the result returned by <strong>lapply</strong>:</p>
+<pre><code>&gt; result
+&gt; is(result)
+&gt; length(result)
+</code></pre><p>&quot;result&quot; is a list of two elements each containing a mean value. As you would want to perform further operations on this means, you would like to transform them to a numeric vector. As you saw before you could use <strong>unlist</strong> or <strong>as.numeric</strong>:</p>
+<pre><code>&gt; unlist(result)
+&gt; as.numeric(result)
+</code></pre><p>A third possibility is to use <strong>sapply</strong> which is doing the same thing than lapply but returns a vector:</p>
+<pre><code>&gt; result &lt;- sapply(mylist, mean)
+&gt; result
+&gt; is(result)
+</code></pre><p>Finally, the last example of this section shows you how to use <strong>lapply/sapply</strong> on more than one structure. For that, you can use <strong>mapply</strong> where &apos;m&apos; strands for &apos;multiple&apos;. You understand now why <strong>mapply</strong> is the multiple version of <strong>lapply</strong> and <strong>sapply</strong>. It runs apply on multiple lists or vectors:</p>
+<pre><code>&gt; ## Creation of two lists with two elements
+&gt; mylist1 &lt;- list(c(23,24,56), c(89,45,65))
+&gt; mylist2 &lt;- list(c(65,12,78), c(23,79,32))
+&gt;
+&gt; ## Display the mean value of each vector of the lists
+&gt; mapply(function(x, y){
+cat(&quot;The mean value of &quot;, x, &quot; is &quot;, mean(x), &quot;\n&quot;)
+cat(&quot;The mean value of &quot;, y, &quot; is &quot;, mean(y), &quot;\n&quot;)
+}, mylist1, mylist2)
+</code></pre>
                                 
                                 </section>
                             
@@ -660,12 +668,12 @@
 
             
                 
-                <a href="ifelse.html" class="navigation navigation-prev " aria-label="Previous page: if-else">
+                <a href="conversions.html" class="navigation navigation-prev " aria-label="Previous page: Conversions">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whileloop.html" class="navigation navigation-next " aria-label="Next page: while loop">
+                <a href="manipulatingfiles.html" class="navigation navigation-next " aria-label="Next page: Manipulating files">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -676,7 +684,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"for loop","level":"1.5.3","depth":2,"next":{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]},"previous":{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"forloop.md","mtime":"2019-06-11T14:06:53.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Apply family","level":"1.6.7","depth":2,"next":{"title":"Manipulating files","level":"1.6.8","depth":2,"path":"manipulatingfiles.md","ref":"manipulatingfiles.md","articles":[]},"previous":{"title":"Conversions","level":"1.6.6","depth":2,"path":"conversions.md","ref":"conversions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"applyfamily.md","mtime":"2019-06-11T15:01:53.842Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

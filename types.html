@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>for loop · GitBook</title>
+        <title>On Types · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whileloop.html" />
+    <link rel="next" href="interactingwiththeenvironmnet.html" />
     
     
-    <link rel="prev" href="ifelse.html" />
+    <link rel="prev" href="manipulatingfiles.html" />
     
 
     </head>
@@ -374,7 +374,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="forloop.html">
+        <li class="chapter " data-level="1.5.3" data-path="forloop.html">
             
                 <a href="forloop.html">
             
@@ -523,7 +523,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.9" data-path="types.html">
+        <li class="chapter active" data-level="1.6.9" data-path="types.html">
             
                 <a href="types.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >for loop</a>
+        <a href="." >On Types</a>
     </h1>
 </div>
 
@@ -599,40 +599,96 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="for-loop">for loop</h1>
-<p>The structure is:</p>
-<pre><code>for(condition){
-    do something
-}
-</code></pre><p>I am going to make the following very confusing statement: </p>
-<p><strong>DO NOT USE FOR LOOPS IN R UNLESS YOU CANNOT DO OTHERWISE</strong></p>
-<p><strong>Why? Because -for- is very slow in R! There is much better, you will learn what later! If you cannot wait, look at the functions apply, lapply and sapply.</strong></p>
-<p><strong>So why having a section about &apos;for&apos; then? Because the concept of loop is one of the most important in programming and because sometimes you will need to use -for- even if it is not super efficient.</strong></p>
-<p>To understand the concept and utility of looping, try to code the following task yourself without looking at the code below. Create a vector of gene names and print each name on the console (use the function &apos;print&apos;). To be consistent, re-use the following vector: </p>
-<pre><code>gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;).
-</code></pre><p>You probably ended doing something like this:</p>
-<pre><code>&gt; ## Create the vector
-&gt; gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;)
-&gt; ## Visualize it
-&gt; gene_names
-&gt; ## Display the first gene
-&gt; gene_names[1]
-&gt; ## Display the second gene
-&gt; gene_names[2]
-&gt; ## Display the third gene
-&gt; gene_names[3]
-&gt; ## Display the fourth gene
-&gt; gene_names[4]
-</code></pre><p>Do you see the problem? That is very repetitive and a lot of code. Fortunately, a loop enables you to do this automatically:</p>
-<pre><code>&gt; ## Let see first how the &apos;condition&apos; works
-&gt; for(i in 1:4){
-+ print(i)
-}
-&gt; ## Now you have understood what it does, use it to access your gene names
-&gt;  for(i in 1:4){
-+ print(gene_names[i])
-+}
-</code></pre><p><strong>WOW!</strong> Super efficient isn&apos;t it? Now that you know how a loop works, you are going to see that using while is also very powerful.</p>
+                                <h1 id="on-types">On Types</h1>
+<p>Several functions enable you to verify the type of data that you are dealing with:</p>
+<pre><code>&gt; ## Creating different data
+&gt; ## Create a number
+&gt; mynum &lt;- 10
+&gt;
+&gt; ## Create a character 
+&gt; myname &lt;- &quot;Luca&quot;
+&gt;
+&gt; ## Create a character vector
+&gt; condition_values &lt;- c(&quot;WT&quot;, &quot;KO&quot;, &quot;WT&quot;, &quot;WT&quot;, &quot;KD&quot;, &quot;KD&quot;, &quot;KO&quot;)
+&gt;
+&gt; ## Create a data.frame
+&gt; DEgenes &lt;- data.frame(geneName = c(&quot;Tfcp2l1&quot;, &quot;Ulk1&quot;, &quot;Atp9a&quot;, &quot;Esrrb&quot;, 
++ &quot;Jam2&quot;, &quot;Lap3&quot;),
++ baseMean = c(13565.269, 4993.927, 1115.084, 7989.630, 3022.796, 7035.433), 
++ log2FoldChange = c(7.633774, 3.486161, 2.933659, 7.161020, 9.992639, 
++ 2.089235),  
++ pvalue = c(6.250339e-157, 2.930542e-152, 2.676439e-101,  2.657022e-98,  
++ 1.521128e-94, 3.774027e-93), stringsAsFactors = FALSE)
+&gt;
+&gt; ## Create a factor
+&gt; condition_factor &lt;- factor(condition_values)
+&gt;
+&gt; ## Create a list
+&gt; chd8Info &lt;- list(Name = &quot;CHD8&quot;, 
++ Description = c(&quot;Chromodomain Helicase DNA Binding Protein&quot;, 
++ &quot;Helicase With SNF2 Domain&quot;, &quot;ATP-Dependent Helicase CHD8&quot;, &quot;HELSNF1&quot;, 
++ &quot;Chromodomain-Helicase-DNA-Binding Protein&quot;, &quot;Axis Duplication Inhibitor&quot;), 
++ Database = data.frame(database = c(&quot;HGNC&quot;, &quot;Entrez_Gene&quot;, &quot;Ensembl&quot;, &quot;OMIM&quot;), 
++ number = c(20153, 57680, 00000100888, 610528)))
+&gt;
+&gt; ## Create a logical
+&gt; mybool &lt;- TRUE
+&gt;
+&gt; ## Create a matrix
+&gt; mat &lt;- matrix(data=1:6, nrow=2, ncol=3, byrow=T)
+&gt;
+&gt; ## Create an empty value
+&gt; NAval &lt;- NA
+</code></pre><p>Verify what is the type of each variable:</p>
+<pre><code>&gt; is(mynum)
+&gt; is(myname)
+&gt; is(condition_values)
+&gt; is(DEgenes)
+&gt; is(condition_factor)
+&gt; is(chd8Info)
+&gt; is(mybool)
+&gt; is(mat)
+&gt; is(NAval)
+&gt; is(NAval)
+</code></pre><p>You can also verify if a variable is of a given type:</p>
+<pre><code>&gt; ## Verify if it is a numeric
+&gt; is.numeric(mynum)
+&gt;
+&gt; ## Verify if it is a character
+&gt; is.character(myname)
+&gt; is.character(condition_values)
+&gt; is.character(mat)
+&gt;
+&gt; ## Verify if it is a vector
+&gt; is.vector(mynum)
+&gt; is.vector(myname)
+&gt; is.vector(condition_values)
+&gt; is.vector(chd8Info)
+&gt;
+&gt; ## Verify if it is a data.frame
+&gt; is.data.frame(condition_values)
+&gt; is.data.frame(DEgenes)
+&gt;
+&gt; ## Verify if it is a factor
+&gt; is.factor(condition_values)
+&gt; is.factor(condition_factor)
+&gt;
+&gt; ## Verify if it is a list
+&gt; is.list(condition_factor)
+&gt; is.list(chd8Info)
+&gt;
+&gt; ## Verify if it is a logical
+&gt; is.logical(chd8Info)
+&gt; is.logical(mybool)
+&gt;
+&gt; ## Verify if it is a matrix
+&gt; is.matrix(mybool)
+&gt; is.matrix(mat)
+&gt;
+&gt; Verify if NA
+&gt; is.na(mat)
+&gt; is.na(NAval)
+</code></pre><p>You see that myname and condition_values are of the same type. However, we wanted to create a character and a vector. The reason is that myname is a character vector of length 1 and condition_values is a character vector of length 7. In the same way, mynum is a numeric vector of length 1.</p>
 
                                 
                                 </section>
@@ -660,12 +716,12 @@
 
             
                 
-                <a href="ifelse.html" class="navigation navigation-prev " aria-label="Previous page: if-else">
+                <a href="manipulatingfiles.html" class="navigation navigation-prev " aria-label="Previous page: Manipulating files">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whileloop.html" class="navigation navigation-next " aria-label="Next page: while loop">
+                <a href="interactingwiththeenvironmnet.html" class="navigation navigation-next " aria-label="Next page: Interacting with the environment">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -676,7 +732,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"for loop","level":"1.5.3","depth":2,"next":{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]},"previous":{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"forloop.md","mtime":"2019-06-11T14:06:53.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"On Types","level":"1.6.9","depth":2,"next":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"path":"interactingwiththeenvironmnet.md","ref":"interactingwiththeenvironmnet.md","articles":[]},"previous":{"title":"Manipulating files","level":"1.6.8","depth":2,"path":"manipulatingfiles.md","ref":"manipulatingfiles.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"types.md","mtime":"2019-06-11T15:06:44.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

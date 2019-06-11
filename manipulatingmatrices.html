@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>for loop · GitBook</title>
+        <title>Manipulating matrices · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whileloop.html" />
+    <link rel="next" href="conversions.html" />
     
     
-    <link rel="prev" href="ifelse.html" />
+    <link rel="prev" href="manipulatingintervals.html" />
     
 
     </head>
@@ -374,7 +374,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="forloop.html">
+        <li class="chapter " data-level="1.5.3" data-path="forloop.html">
             
                 <a href="forloop.html">
             
@@ -471,7 +471,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="manipulatingmatrices.html">
+        <li class="chapter active" data-level="1.6.5" data-path="manipulatingmatrices.html">
             
                 <a href="manipulatingmatrices.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >for loop</a>
+        <a href="." >Manipulating matrices</a>
     </h1>
 </div>
 
@@ -599,41 +599,50 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="for-loop">for loop</h1>
-<p>The structure is:</p>
-<pre><code>for(condition){
-    do something
-}
-</code></pre><p>I am going to make the following very confusing statement: </p>
-<p><strong>DO NOT USE FOR LOOPS IN R UNLESS YOU CANNOT DO OTHERWISE</strong></p>
-<p><strong>Why? Because -for- is very slow in R! There is much better, you will learn what later! If you cannot wait, look at the functions apply, lapply and sapply.</strong></p>
-<p><strong>So why having a section about &apos;for&apos; then? Because the concept of loop is one of the most important in programming and because sometimes you will need to use -for- even if it is not super efficient.</strong></p>
-<p>To understand the concept and utility of looping, try to code the following task yourself without looking at the code below. Create a vector of gene names and print each name on the console (use the function &apos;print&apos;). To be consistent, re-use the following vector: </p>
-<pre><code>gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;).
-</code></pre><p>You probably ended doing something like this:</p>
-<pre><code>&gt; ## Create the vector
-&gt; gene_names &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;)
-&gt; ## Visualize it
-&gt; gene_names
-&gt; ## Display the first gene
-&gt; gene_names[1]
-&gt; ## Display the second gene
-&gt; gene_names[2]
-&gt; ## Display the third gene
-&gt; gene_names[3]
-&gt; ## Display the fourth gene
-&gt; gene_names[4]
-</code></pre><p>Do you see the problem? That is very repetitive and a lot of code. Fortunately, a loop enables you to do this automatically:</p>
-<pre><code>&gt; ## Let see first how the &apos;condition&apos; works
-&gt; for(i in 1:4){
-+ print(i)
-}
-&gt; ## Now you have understood what it does, use it to access your gene names
-&gt;  for(i in 1:4){
-+ print(gene_names[i])
-+}
-</code></pre><p><strong>WOW!</strong> Super efficient isn&apos;t it? Now that you know how a loop works, you are going to see that using while is also very powerful.</p>
-
+                                <h1 id="manipulating-matrices">Manipulating Matrices</h1>
+<p>You have already seen some functions that you can use on matrices:</p>
+<pre><code>&gt; ## Creation of a matrix with vectors
+&gt; gene1 &lt;- c(8,9,15)
+&gt; gene2 &lt;- c(17,12,13)
+&gt; gene3 &lt;- c(11,15,7)
+&gt; gene4 &lt;- c(5,12,19)
+&gt; matrix1 &lt;- matrix(c(gene1, gene2, gene3, gene4), nrow=4, ncol=3, byrow=T)
+&gt; matrix1
+&gt; ## Define the names of rows and columns
+&gt; rownames(matrix1) &lt;- c(&quot;gene1&quot;,&quot;gene2&quot;, &quot;gene3&quot;, &quot;gene4&quot;)
+&gt; colnames(matrix1) &lt;- c(&quot;condition1&quot;, &quot;condition2&quot;, &quot;condition3&quot;)
+&gt; matrix1
+&gt; dim(matrix1)
+&gt; nrow(matrix1)
+&gt; ncol(matrix1)
+&gt; rownames(matrix1)
+&gt; colnames(matrix1)
+</code></pre><p>Below are some other useful functions:</p>
+<pre><code>&gt; ## Retrieve the mean value of each row and columns
+&gt; rowMeans(matrix1)
+&gt; colMeans(matrix1)
+&gt;
+&gt; ## Retrieve the sum of each row and columns
+&gt; rowSums(matrix1)
+&gt; colSums(matrix1)
+&gt;
+&gt; ## Get the transpose of a matrix
+&gt; t(matrix1)
+</code></pre><p>You can also combine matrices by rows or columns:</p>
+<pre><code>&gt; ## Creation of a matrix with vectors
+&gt; gene5 &lt;- c(84,4,5)
+&gt; gene6 &lt;- c(18,22,31)
+&gt; gene7 &lt;- c(211,115,47)
+&gt; gene8 &lt;- c(54,112,1219)
+&gt; matrix2 &lt;- matrix(c(gene5, gene6, gene7, gene8), nrow=4, ncol=3, byrow=T)
+&gt; matrix2
+&gt;
+&gt; ## Combine matrix 1 and 2 by row
+&gt; rbind(matrix1, matrix2)
+&gt;
+&gt; ## Combine matrix 1 and 2 by column
+&gt; cbind(matrix1, matrix2)
+</code></pre>
                                 
                                 </section>
                             
@@ -660,12 +669,12 @@
 
             
                 
-                <a href="ifelse.html" class="navigation navigation-prev " aria-label="Previous page: if-else">
+                <a href="manipulatingintervals.html" class="navigation navigation-prev " aria-label="Previous page: Manipulating intervals">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whileloop.html" class="navigation navigation-next " aria-label="Next page: while loop">
+                <a href="conversions.html" class="navigation navigation-next " aria-label="Next page: Conversions">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -676,7 +685,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"for loop","level":"1.5.3","depth":2,"next":{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]},"previous":{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"forloop.md","mtime":"2019-06-11T14:06:53.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manipulating matrices","level":"1.6.5","depth":2,"next":{"title":"Conversions","level":"1.6.6","depth":2,"path":"conversions.md","ref":"conversions.md","articles":[]},"previous":{"title":"Manipulating intervals","level":"1.6.4","depth":2,"path":"manipulatingintervals.md","ref":"manipulatingintervals.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingmatrices.md","mtime":"2019-06-11T14:58:51.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
