@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>What is programming? · GitBook</title>
+        <title>Factors · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whatisR.html" />
+    <link rel="next" href="booleans.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="moreadvancesdatatype.html" />
     
 
     </head>
@@ -103,7 +103,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1.1" data-path="whatisprogramming.html">
+        <li class="chapter " data-level="1.1.1" data-path="whatisprogramming.html">
             
                 <a href="whatisprogramming.html">
             
@@ -271,7 +271,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="factors.html">
+        <li class="chapter active" data-level="1.4.1" data-path="factors.html">
             
                 <a href="factors.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >What is programming?</a>
+        <a href="." >Factors</a>
     </h1>
 </div>
 
@@ -599,12 +599,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="what-is-programming">What is programming?</h1>
-<p>You heard the word but have absolutely no idea of what programming is? Do not worry, we are going to start from the very beginning.</p>
-<p>  When you use your computer to create an excel spreadsheet containing the list of the cell lines that you use, you performs multiple actions that your computer recognizes and interprets. Behind excel, you have thousands of lines of code translating the different operations that you perform: Insert text in this cell, save my file, plot the values of the column A, etc. You can now think about the job of a programmer as a &quot;computer translator&quot;. The programmer uses a &quot;language&quot; (<strong>programming language</strong>) to &quot;speak to the computer&quot;: &apos;open this file&apos;, &apos;create columns&apos;, etc. BAM! Now you understand why there are programming languages.</p>
-<p>  As people in different countries speak different languages, a computer can &apos;understand&apos; different programming languages to perform different actions. It can understand &apos;Java&apos; to display graphical interfaces, &apos;C&apos; to perform some heavy calculations, or &apos;R&apos; to analyze and plot biological data (you probably heard about Python as well). </p>
-<p>  In this course, you are going to learn how to &quot;<strong>speak</strong>&quot; to a computer :p. You will realize how fast you can be compared to what you do currently in excel and that you can perform much more!</p>
-<p>  In the next section, we are going to see what R is and why it is a good choice for your research in Biology.</p>
+                                <h1 id="factors">Factors</h1>
+<p>  Factors are in some way similar to vectors. They also contain several values but have some interesting additional properties. Firstly, factors are mainly used to store <strong>qualitative</strong> values, i.e. values that have a descriptive information and not a quantitative one.
+For instance, going back to our example of gene expression in different conditions, the expression values are <strong>quantitative</strong> and the conditions are <strong>qualitative</strong>.</p>
+<p>  More precisely, factors can contain different types of data: It can contain numerics or characters (or boolean, see next section). More importantly, it has <strong>levels</strong> which are values that each element of the factor can take. Not very clear, I know, keep reading. </p>
+<p>  Factors are close to vectors in the way that they contain a collection of elements, but each element has a limited number of values that it can take. Factors are widely used in Bioinformatics. It increases a lot the speed of computation for some given tasks. <strong>Factors are very useful for summary statistics, plots and regression</strong>.</p>
+<p>  I can feel your brain getting high in temperature. Let&apos;s cool it down, they are in fact super easy to use:</p>
+<pre><code>&gt; ## Create a vector describing treatment conditions for several of your samples
+&gt; condition_values &lt;- c(&quot;WT&quot;, &quot;KO&quot;, &quot;WT&quot;, &quot;WT&quot;, &quot;KD&quot;, &quot;KD&quot;, &quot;KO&quot;)
+&gt; ## Create a factor with these values
+&gt; condition_factor &lt;- factor(condition_values)
+&gt; ## Pay a close attention to the result of the command below
+&gt; condition_factor
+</code></pre><p>  You can see that displaying the &quot;condition_factor&quot; not only gives the elements that it contains, but also the different levels composing the factor. <strong>Levels is an ordered vector of the unique values of the factor</strong>.
+If you did not understand the previous sentence, just have a look at the vector &quot;condition_values&quot;; order it alphabetically and remove the duplicated values. BAM! you obtained the levels of your factor.</p>
+<p>  In mathematics, you probably heard about the &quot;Universe&quot; of the data. A universe is all the possible values that your data can take. Therefore, the levels of a factor is the universe of its elements. Remember that they can only take a limited number of values. Going back to the example above, imagine that you perform a study of the transcription factor Myb. Because you are like mega smart, you build a system to have its conditional expression upon induction with Dox. On top of that, to publish in Nature or Science, and become super famous and super rich with a big villa in Santa Barbara, you perform a knock-down and a knock-out. The <strong>universe</strong> of your samples is &quot;WT&quot;, &quot;KO&quot;, &quot;KD&quot; and &quot;Dox&quot;. Now you want to compare the WT with the KO but you want to use your universe to build your reports:</p>
+<pre><code>&gt; ## Create a vector describing treatment conditions for several of your samples
+&gt; condition_values &lt;- c(&quot;WT&quot;, &quot;KO&quot;)
+&gt; ## Create a factor with these values
+&gt; condition_factor &lt;- factor(condition_values, levels=c(&quot;WT&quot;, &quot;KO&quot;, &quot;KD&quot;, &quot;Dox&quot;))
+&gt; ## Pay a close attention to the result of the command below
+&gt; condition_factor
+</code></pre><p> Still don&apos;t see the point? ok. Imagine now that you have 500 samples in an excel spreadsheet, one column is the name of the condition, one column is the sample and one is the number of expressed genes. And now, you are not the super scientist but the student who came two years after, and who was asked to reanalyze your data while you are putting your golfbag in your Mercedes to rush to the clubhouse to see the pictures of the new house of your best friend Arnold. That would be super nice if you could know the different conditions of the experiment in a few lines. For that, you typically can use factors. We are now going to see examples showing why <strong>factors are very useful for summary statistics and plots</strong>.</p>
+<p><strong>ALERT: In the following example, we will use some functions! Do not worry, you already used plenty of them: 5^3 (power), vector(), LETTERS, &apos;:&apos; (suite of numeric), names(), matrix(), rownames(), colnames(), data.frame() and list()</strong>.</p>
+<pre><code>&gt; ## Read the table containing the two columns condition and sample
+&gt; fi &lt;- read.table(&quot;samplecondition.txt&quot;, header=TRUE)
+&gt; ## Visualize the first lines of the table
+&gt; head(fi)
+&gt; ## Count the number of rows
+&gt; nrow(fi)
+&gt; ## Count the number of columns
+&gt; ncol(fi)
+&gt; ## Get the number of rows and columns at once
+&gt; dim(fi)
+&gt; ## Get the column names
+&gt; colnames(fi)
+&gt; ## Get the type of fi
+&gt; is(fi)
+&gt; ## Get the type of each column
+&gt; is(fi$condition)
+&gt; is(fi$sample)
+&gt; is(fi$geneExpressed)
+</code></pre><p>The two first columns of your table are factors! Now we are going to see why it is super useful:</p>
+<pre><code>&gt; summary(fi)
+</code></pre><p>Bam! In one command you can see that there are 171 KD samples, 173 KO samples and 156 WT samples. You are now going to make your first plot. We want to represent the number of gene expressed in function of the conditions. 
+\newline</p>
+<pre><code> &gt; plot(fi$geneExpressed~fi$condition, xlab=&quot;condition&quot;, ylab=&quot;Nb Expressed&quot;,
+ + main=&quot;Nb of Gene expressed per condition&quot;)
+</code></pre><p>This command is decomposed into the following actions:</p>
+<ul>
+<li><strong>plot</strong>: Is the command to plot something (you did not expect that right?).</li>
+<li><strong>fi$geneExpressed~fi$condition</strong>: This is a formula. What is on the left is the response and on the right the explanatory variable. You can read it as &quot;plot the number of genes expressed per condition&quot;.</li>
+<li><strong>xlab</strong>: Defines the label to display on the x-axis.</li>
+<li><strong>ylab</strong>: Defines the label to display on the y-axis.</li>
+<li><p><strong>main</strong>: Defines the title of the plot.</p>
+<p>Plot is not the only function to create graphics. We will see later on how to visualize your data in different ways.</p>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -632,12 +683,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="moreadvancesdatatype.html" class="navigation navigation-prev " aria-label="Previous page: More advanced data type">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whatisR.html" class="navigation navigation-next " aria-label="Next page: What is R?">
+                <a href="booleans.html" class="navigation navigation-next " aria-label="Next page: Booleans">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -648,7 +699,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"What is programming?","level":"1.1.1","depth":2,"next":{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"What is programming?","level":"1.1.1","depth":2,"path":"whatisprogramming.md","ref":"whatisprogramming.md","articles":[]},{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},{"title":"R studio and R as a calculator","level":"1.1.3","depth":2,"path":"rstudioandrasacalculator.md","ref":"rstudioandrasacalculator.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"whatisprogramming.md","mtime":"2019-06-11T12:16:35.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Factors","level":"1.4.1","depth":2,"next":{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]},"previous":{"title":"More advanced data type","level":"1.4","depth":1,"path":"moreadvancesdatatype.md","ref":"moreadvancesdatatype.md","articles":[{"title":"Factors","level":"1.4.1","depth":2,"path":"factors.md","ref":"factors.md","articles":[]},{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"factors.md","mtime":"2019-06-11T12:58:30.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

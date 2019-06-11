@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>What is programming? · GitBook</title>
+        <title>Logical operators · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whatisR.html" />
+    <link rel="next" href="controlstructures.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="relationaloperators.html" />
     
 
     </head>
@@ -103,7 +103,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1.1" data-path="whatisprogramming.html">
+        <li class="chapter " data-level="1.1.1" data-path="whatisprogramming.html">
             
                 <a href="whatisprogramming.html">
             
@@ -311,7 +311,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2.2" data-path="logicaloperators.html">
+        <li class="chapter active" data-level="1.4.2.2" data-path="logicaloperators.html">
             
                 <a href="logicaloperators.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >What is programming?</a>
+        <a href="." >Logical operators</a>
     </h1>
 </div>
 
@@ -599,12 +599,122 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="what-is-programming">What is programming?</h1>
-<p>You heard the word but have absolutely no idea of what programming is? Do not worry, we are going to start from the very beginning.</p>
-<p>  When you use your computer to create an excel spreadsheet containing the list of the cell lines that you use, you performs multiple actions that your computer recognizes and interprets. Behind excel, you have thousands of lines of code translating the different operations that you perform: Insert text in this cell, save my file, plot the values of the column A, etc. You can now think about the job of a programmer as a &quot;computer translator&quot;. The programmer uses a &quot;language&quot; (<strong>programming language</strong>) to &quot;speak to the computer&quot;: &apos;open this file&apos;, &apos;create columns&apos;, etc. BAM! Now you understand why there are programming languages.</p>
-<p>  As people in different countries speak different languages, a computer can &apos;understand&apos; different programming languages to perform different actions. It can understand &apos;Java&apos; to display graphical interfaces, &apos;C&apos; to perform some heavy calculations, or &apos;R&apos; to analyze and plot biological data (you probably heard about Python as well). </p>
-<p>  In this course, you are going to learn how to &quot;<strong>speak</strong>&quot; to a computer :p. You will realize how fast you can be compared to what you do currently in excel and that you can perform much more!</p>
-<p>  In the next section, we are going to see what R is and why it is a good choice for your research in Biology.</p>
+                                <h1 id="logical-operators">Logical operators</h1>
+<p>  Logical operators enable to carry out boolean operations such as AND, OR, NOT. This is very useful if you want several conditions to be true or false. For instance, you might want to consider a set of cells dead if the Ser5 amino-acid of RNA Polymerase II was mutated AND the type of cell is mammalian. Again, before seeing how to code that, let&apos;start with simple examples.
+\newline</p>
+<pre><code>&gt; ## The AND operation is done with the symbol &apos;&amp;&amp;&apos;
+&gt; TRUE &amp;&amp; TRUE
+&gt; TRUE &amp;&amp; FALSE
+&gt; FALSE &amp;&amp; FALSE
+&gt; ## The OR operation is done with the symbol &apos;||&apos;
+&gt; TRUE || TRUE
+&gt; TRUE || FALSE
+&gt; FALSE || FALSE
+&gt; ## The NOT operation is done with the symbol &apos;!&apos;
+&gt; !TRUE
+&gt; !FALSE 
+&gt; !FALSE || FALSE
+&gt; ## You can use parentheses to create logical groups
+&gt; (TRUE || FALSE) &amp;&amp; (TRUE &amp;&amp; FALSE)
+</code></pre><p><strong>Exercise</strong></p>
+<ul>
+<li><p>Define two variables x and y with the values 5 and 6. Can you guess the result of (x &gt; 5 &amp;&amp; y &gt; 5) || (x == y) ?</p>
+</li>
+<li><p>Define the following variables: mutation1 &lt;- &quot;Tyr1&quot;, mutation2 &lt;- &quot;Ser5&quot;, cellType1 &lt;- &quot;yeast&quot;, cellType2  &lt;- &quot;mammals&quot;. Code and verify the following statement:</p>
+<ul>
+<li>mutation1 EQUAL &quot;Ser5&quot;</li>
+<li>cellType2 DIFFERENT THAN &quot;mammals&quot;</li>
+<li>mutation2 EQUAL &quot;Ser5&quot; AND cellType2 EQUAL &quot;mammals&quot;      </li>
+</ul>
+</li>
+</ul>
+<p><br><br>
+Keep in mind the following rules when coding:</p>
+<table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRUE &amp;&amp; FALSE</td>
+<td>FALSE</td>
+</tr>
+<tr>
+<td>TRUE || FALSE</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<strong>Why?</strong> Think about the following analogy: AND is multiplication and OR is addition. 1 is TRUE and 0 is FALSE. Then you replace the value in the table above: </p>
+<table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 * 0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1 + 0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>  You can also apply the logical operators on vectors <strong>but</strong> there is a subtlety. You need element-wise operators which are <strong>simple</strong> &apos;|&apos; or &apos;&amp;&apos; (we used double &apos;||&apos; and &apos;&amp;&amp;&apos; which are <strong>not</strong> element-wise operators). Try the following code:</p>
+<pre><code>&gt; ## Define two logical vectors
+&gt; vec1 &lt;- c(TRUE, FALSE, TRUE)
+&gt; vec2 &lt;- c(FALSE, FALSE, FALSE)
+&gt; ## Try the previous commands and see the results  (double symbols) 
+&gt; vec1 &amp;&amp; vec2
+&gt; vec1 || vec2
+&gt; ## Now use the element-wise operators
+&gt; vec1 &amp; vec2
+&gt; vec1 | vec2
+&gt; ## Finally try the negation operator
+&gt; !vec1
+&gt; !vec2 
+&gt; ## Can you predict the output of the following command?
+&gt; !vec1 &amp; vec2
+</code></pre><p><strong>Exercise: Put a different number of values in vec1 and vec2 and see what do you obtain.</strong></p>
+<p>  In summary, the logic operators are:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>Logical NOT</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Element-wise logical AND</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>Logical AND</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Element-wise logical OR</td>
+</tr>
+<tr>
+<td>||</td>
+<td>Logical OR</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -632,12 +742,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="relationaloperators.html" class="navigation navigation-prev " aria-label="Previous page: Relational operators">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whatisR.html" class="navigation navigation-next " aria-label="Next page: What is R?">
+                <a href="controlstructures.html" class="navigation navigation-next " aria-label="Next page: Control structures">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -648,7 +758,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"What is programming?","level":"1.1.1","depth":2,"next":{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"What is programming?","level":"1.1.1","depth":2,"path":"whatisprogramming.md","ref":"whatisprogramming.md","articles":[]},{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},{"title":"R studio and R as a calculator","level":"1.1.3","depth":2,"path":"rstudioandrasacalculator.md","ref":"rstudioandrasacalculator.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"whatisprogramming.md","mtime":"2019-06-11T12:16:35.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Logical operators","level":"1.4.2.2","depth":3,"next":{"title":"Control structures","level":"1.5","depth":1,"path":"controlstructures.md","ref":"controlstructures.md","articles":[{"title":"if","level":"1.5.1","depth":2,"path":"if.md","ref":"if.md","articles":[]},{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},{"title":"for loop","level":"1.5.3","depth":2,"path":"forloop.md","ref":"forloop.md","articles":[]},{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]}]},"previous":{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"logicaloperators.md","mtime":"2019-06-11T14:01:00.628Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

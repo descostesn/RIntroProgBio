@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>What is programming? · GitBook</title>
+        <title>Vectors · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whatisR.html" />
+    <link rel="next" href="matrices.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="characters.html" />
     
 
     </head>
@@ -103,7 +103,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1.1" data-path="whatisprogramming.html">
+        <li class="chapter " data-level="1.1.1" data-path="whatisprogramming.html">
             
                 <a href="whatisprogramming.html">
             
@@ -187,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="vectors.html">
+        <li class="chapter active" data-level="1.3.2" data-path="vectors.html">
             
                 <a href="vectors.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >What is programming?</a>
+        <a href="." >Vectors</a>
     </h1>
 </div>
 
@@ -599,12 +599,47 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="what-is-programming">What is programming?</h1>
-<p>You heard the word but have absolutely no idea of what programming is? Do not worry, we are going to start from the very beginning.</p>
-<p>  When you use your computer to create an excel spreadsheet containing the list of the cell lines that you use, you performs multiple actions that your computer recognizes and interprets. Behind excel, you have thousands of lines of code translating the different operations that you perform: Insert text in this cell, save my file, plot the values of the column A, etc. You can now think about the job of a programmer as a &quot;computer translator&quot;. The programmer uses a &quot;language&quot; (<strong>programming language</strong>) to &quot;speak to the computer&quot;: &apos;open this file&apos;, &apos;create columns&apos;, etc. BAM! Now you understand why there are programming languages.</p>
-<p>  As people in different countries speak different languages, a computer can &apos;understand&apos; different programming languages to perform different actions. It can understand &apos;Java&apos; to display graphical interfaces, &apos;C&apos; to perform some heavy calculations, or &apos;R&apos; to analyze and plot biological data (you probably heard about Python as well). </p>
-<p>  In this course, you are going to learn how to &quot;<strong>speak</strong>&quot; to a computer :p. You will realize how fast you can be compared to what you do currently in excel and that you can perform much more!</p>
-<p>  In the next section, we are going to see what R is and why it is a good choice for your research in Biology.</p>
+                                <h1 id="vectors">Vectors</h1>
+<p> Feeling a bit limited in what you can do so far? No worries, let&apos;s level up our programming skills. You probably heard about vectors in high-school, probably in Physics and Mathematics. Remember, this arrow having a length and a direction? Well, forget about it :). Vectors in R have nothing to do with this. What is nice is that they are more simple, much more simple!</p>
+<p><strong>Vocabulary</strong>: A vector is the simplest R data structure consisting of a collection of numeric or character values (there are other types of vectors but that will not be covered here).</p>
+<p>In the examples below, you will see different manners to create vectors and to access their elements.</p>
+<pre><code>&gt; ## A first way to declare numeric vector
+&gt; vector(&quot;numeric&quot;, 10)
+&gt; ## And character vectors
+&gt; vector(&quot;character&quot;, 5)
+</code></pre><p>Maybe you would like to control what is inside your vector:</p>
+<pre><code>&gt; ## Generate a serie of numbers from 5 to 15
+&gt; 5:15
+&gt; ## Generate letters from A to D
+&gt; ## The function LETTERS generate A-Z
+&gt; LETTERS
+&gt; ## Now subselect the first four letters
+&gt; LETTERS[1:4]
+</code></pre><p>BAM! You just have used a R function with subsetting the vector! We will talk about R functions later in this course. Let&apos;s go back to simple operations:</p>
+<pre><code>&gt; ## Generate vectors with combine
+&gt; c(1,2,3)
+&gt; c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)
+&gt; ## Let&apos;s use variables to combine vectors
+&gt; vector1 &lt;- c(1,2,3)
+&gt; vector2 &lt;- c(8,9,10)
+&gt; vector3 &lt;- c(vector1, vector2)
+&gt; vector3
+</code></pre><p>We are going now to see how to access and modify particular elements of a vector:</p>
+<pre><code>&gt; ## Create a vector with values from 11 to 25 
+&gt; vector1 &lt;- 11:25
+&gt; vector1
+&gt; ## Access the first element
+&gt; vector1[1]
+&gt; # Modify the 5th element
+&gt; vector1[5] &lt;- 100
+&gt; vector1
+</code></pre><p>Finally, let&apos; see how to combine numbers and characters:</p>
+<pre><code>&gt; genes &lt;- c(100,205,348,345)
+&gt; names(genes) &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;)
+&gt; genes
+&gt; genes[2]
+&gt; genes[&quot;HoxC&quot;]
+</code></pre><p><strong>Exercise</strong>: What would happen if you give more names than values?</p>
 
                                 
                                 </section>
@@ -632,12 +667,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="characters.html" class="navigation navigation-prev " aria-label="Previous page: Characters">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whatisR.html" class="navigation navigation-next " aria-label="Next page: What is R?">
+                <a href="matrices.html" class="navigation navigation-next " aria-label="Next page: Matrices">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -648,7 +683,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"What is programming?","level":"1.1.1","depth":2,"next":{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"What is programming?","level":"1.1.1","depth":2,"path":"whatisprogramming.md","ref":"whatisprogramming.md","articles":[]},{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},{"title":"R studio and R as a calculator","level":"1.1.3","depth":2,"path":"rstudioandrasacalculator.md","ref":"rstudioandrasacalculator.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"whatisprogramming.md","mtime":"2019-06-11T12:16:35.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vectors","level":"1.3.2","depth":2,"next":{"title":"Matrices","level":"1.3.3","depth":2,"path":"matrices.md","ref":"matrices.md","articles":[]},"previous":{"title":"Characters","level":"1.3.1","depth":2,"path":"characters.md","ref":"characters.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vectors.md","mtime":"2019-06-11T12:46:27.271Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

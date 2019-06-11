@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>What is programming? · GitBook</title>
+        <title>R base functions · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="whatisR.html" />
+    <link rel="next" href="manipulatingnumbers.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="whileloop.html" />
     
 
     </head>
@@ -103,7 +103,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1.1" data-path="whatisprogramming.html">
+        <li class="chapter " data-level="1.1.1" data-path="whatisprogramming.html">
             
                 <a href="whatisprogramming.html">
             
@@ -405,7 +405,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="rbasefunctions.html">
+        <li class="chapter active" data-level="1.6" data-path="rbasefunctions.html">
             
                 <a href="rbasefunctions.html">
             
@@ -584,7 +584,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >What is programming?</a>
+        <a href="." >R base functions</a>
     </h1>
 </div>
 
@@ -599,12 +599,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="what-is-programming">What is programming?</h1>
-<p>You heard the word but have absolutely no idea of what programming is? Do not worry, we are going to start from the very beginning.</p>
-<p>  When you use your computer to create an excel spreadsheet containing the list of the cell lines that you use, you performs multiple actions that your computer recognizes and interprets. Behind excel, you have thousands of lines of code translating the different operations that you perform: Insert text in this cell, save my file, plot the values of the column A, etc. You can now think about the job of a programmer as a &quot;computer translator&quot;. The programmer uses a &quot;language&quot; (<strong>programming language</strong>) to &quot;speak to the computer&quot;: &apos;open this file&apos;, &apos;create columns&apos;, etc. BAM! Now you understand why there are programming languages.</p>
-<p>  As people in different countries speak different languages, a computer can &apos;understand&apos; different programming languages to perform different actions. It can understand &apos;Java&apos; to display graphical interfaces, &apos;C&apos; to perform some heavy calculations, or &apos;R&apos; to analyze and plot biological data (you probably heard about Python as well). </p>
-<p>  In this course, you are going to learn how to &quot;<strong>speak</strong>&quot; to a computer :p. You will realize how fast you can be compared to what you do currently in excel and that you can perform much more!</p>
-<p>  In the next section, we are going to see what R is and why it is a good choice for your research in Biology.</p>
+                                <h1 id="r-base-functions">R Base Functions</h1>
+<p> In this section, you will learn about some important functions in R. A real life example will be given summarizing everything that you have learned, including the two  previous sessions. Finally, a brief introduction to coding your own functions is given.</p>
+<p> This section introduces the mostly used R functions. This list is very subjective and built according to my own opinion. If you have this list of functions in mind (including what they do), I think that you will be able to do a lot of things. The complete list of R Base functions can be found <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html" target="_blank">here</a>.</p>
 
                                 
                                 </section>
@@ -632,12 +629,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="whileloop.html" class="navigation navigation-prev " aria-label="Previous page: while loop">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="whatisR.html" class="navigation navigation-next " aria-label="Next page: What is R?">
+                <a href="manipulatingnumbers.html" class="navigation navigation-next " aria-label="Next page: Manipulating numbers">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -648,7 +645,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"What is programming?","level":"1.1.1","depth":2,"next":{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"What is programming?","level":"1.1.1","depth":2,"path":"whatisprogramming.md","ref":"whatisprogramming.md","articles":[]},{"title":"What is R?","level":"1.1.2","depth":2,"path":"whatisR.md","ref":"whatisR.md","articles":[]},{"title":"R studio and R as a calculator","level":"1.1.3","depth":2,"path":"rstudioandrasacalculator.md","ref":"rstudioandrasacalculator.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"whatisprogramming.md","mtime":"2019-06-11T12:16:35.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"R base functions","level":"1.6","depth":1,"next":{"title":"Manipulating numbers","level":"1.6.1","depth":2,"path":"manipulatingnumbers.md","ref":"manipulatingnumbers.md","articles":[]},"previous":{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"rbasefunctions.md","mtime":"2019-06-11T14:10:35.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:52:59.851Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
