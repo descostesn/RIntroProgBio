@@ -35,3 +35,15 @@
 > b
 ```
 
+# Exercise 3
+
+```
+> ## Using double quotes works too
+> a <- "b"
+> a
+> ## Give 'a' a sentence
+> a <- 'Hello World'
+> a
+> ## What is happening if you use a quote inside a sentence?
+> test <- 'it's a R workshop'
+```
