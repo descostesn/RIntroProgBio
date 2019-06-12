@@ -34,26 +34,16 @@ BAM! You just have used a R function with subsetting the vector! We will talk ab
 > ## Generate vectors with combine
 > c(1,2,3)
 > c("A", "B", "C")
-> ## Let's use variables to combine vectors
-> vector1 <- c(1,2,3)
-> vector2 <- c(8,9,10)
-> vector3 <- c(vector1, vector2)
-> vector3
 ```
 
-We are going now to see how to access and modify particular elements of a vector:
+** Exercise 4:**
 
+  + Create two vectors with 'combine' and affect the results to two variables
+  + Use the created variables to combine them in a third one!
+  + Create a vector with values from 11 to 25 (use the symbole ':') and store the result in a new variable
+  + Access the first element of the vector
+  + Modify the value of the fifth element
 
-```
-> ## Create a vector with values from 11 to 25 
-> vector1 <- 11:25
-> vector1
-> ## Access the first element
-> vector1[1]
-> # Modify the 5th element
-> vector1[5] <- 100
-> vector1
-```
 
 Finally, let' see how to combine numbers and characters:
 
@@ -66,4 +56,4 @@ Finally, let' see how to combine numbers and characters:
 > genes["HoxC"]
 ```
 
-**Exercise**: What would happen if you give more names than values?
+**Question**: What would happen if you give more names than values?
