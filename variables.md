@@ -11,17 +11,16 @@ In order to store values along your program, you need to '**assign**' your value
 > a <- 42
 > ## Display the value of 'a'
 > a
-> ## Change the value of 'a'
-> a <- 8
-> # Display the value of 'a' again
-> a
-> ## Perform an addition and use the result in a division
-> a <- 3 + 5
-> b <- a/4
-> ## What is now the value of b?
-> b
 ```
-    
+
+**Exercise 2:**
+
+  + Change the value of 'a' to 8
+  + Display the value of 'a'
+  + Perform an addition and use the result in a division
+  + Display the result
+
+<br>    
 BAM! You got to the next level! Declaring and using variables in your program.
 
 *NB: To declare a variable you can also use the symbol '=' but do not do it. This is very very ugly! Yes, there are weird programmers deciding about coding style practice :o. The real reason is to distinguish between variable declaration and parameters. You will understand this later.*
