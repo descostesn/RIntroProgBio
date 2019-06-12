@@ -21,3 +21,17 @@
 > ((10 + 15) / 5) - 3*2
 ```
 
+# Exercise 2
+
+```
+> ## Change the value of 'a'
+> a <- 8
+> # Display the value of 'a'
+> a
+> ## Perform an addition and use the result in a division
+> a <- 3 + 5
+> b <- a/4
+> ## What is now the value of b?
+> b
+```
+
