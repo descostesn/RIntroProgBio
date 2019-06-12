@@ -22,5 +22,5 @@ It is simple as this! You can also obtain some very fancy plots:
 ![More complicated plot \label{figure2}](fancyIntro.png)
 
 
-  In summary, R enables you to process, organize, analyze and represents your biological data in a powerful manner. But to start playing with your data, you need to learn the basics. In the next section, we are going to see how to use R at EMBL and begin to play with the command line.
+  In summary, R enables you to process, organize, analyze and represent your biological data in a powerful manner. But to start playing with your data, you need to learn the basics. In the next section, we are going to see how to use R at EMBL and begin to play with the command line.
   
