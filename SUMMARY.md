@@ -33,6 +33,6 @@
   * [Manipulating files](manipulatingfiles.md)
   * [On Types](types.md)
   * [Interacting with the environment](interactingwiththeenvironmnet.md)
-  
+* [Solutions](solutions.md)
   
 
