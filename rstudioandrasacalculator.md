@@ -19,35 +19,23 @@ scripts to your favorite location and use the file management system to open it.
 * The file management and plots: You can manage your files from this interface. Plots will also appear in this section.
 
 
-R is an interpreted language. To cut a long story short, that means that you can code in an interactive manner. Start interacting with the console by entering the commands below:
-\newline
+R is an interpreted language. To cut a long story short, that means that you can code in an interactive manner.
 
-```
-> ## Enter a number
-> 42
-> ## Enter a decimal number
-> 42.1
-> ##Perform addition
-> 39 + 3
-> ## Perform subtraction
-> 58 - 16
-> ## Perform multiplication
-> 6 * 7
-> ## Perform division
-> 8 / 3
-> ## Compute the remainder (modulo: 10 = (3x3) + 1)
-> 10 %% 3
-> ## Use power
-> 5^3
-> ## Combine operators
-> ((10 + 15) / 5) - 3*2
-```
-	
-*NB: The lines starting with '##' are comments. They are not interpreted by the console. It is a good practice to use comments to annotate your code. Believe me, reading a piece of code that you did months or years ago without any comments is a real hassle. Using only one '#' will do the job too, but it is a good practice to use '##'. We will see coding style good practice later on in this workshop.*
-	
-**Remark: You do not need to type '>'. This symbole just indicates the console.**
+**Exercise 1:** Start interacting with the console by entering the commands below and pressing 'enter':
 
-  
+  + Enter a number
+  + Enter a decimal number
+  + Perform addition
+  + Perform multiplication
+  + Perform division
+  + Compute the remainder of 10 divided by 3 (use the %% symbol)
+  + Compute the cube of 5 (use the ^ symbol)
+  + Try ((10 + 15) / 5) - 3*2
+  + Enter '## 2+3'
+	
+*NB: The lines starting with '##' are comments. They are not interpreted by the console. It is a good practice to use comments to annotate your code. Believe me, reading a piece of code that you did months or years ago without any comments is a real hassle. Using only one '#' will do the job too, but it is a good practice to use '##'.
+	
+ 
 Some useful RStudio keyboard shortcuts:
 
 * Retrieve previously entered commands:  'Up arrow'
