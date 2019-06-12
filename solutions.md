@@ -47,3 +47,23 @@
 > ## What is happening if you use a quote inside a sentence?
 > test <- 'it's a R workshop'
 ```
+
+# Exercise 4
+
+```
+> ## Let's use variables to combine vectors
+> vector1 <- c(1,2,3)
+> vector2 <- c(8,9,10)
+> vector3 <- c(vector1, vector2)
+> vector3
+
+> ## Create a vector with values from 11 to 25
+> vector1 <- 11:25
+> vector1
+> ## Access the first element
+> vector1[1]
+> # Modify the 5th element
+> vector1[5] <- 100
+> vector1
+```
+
