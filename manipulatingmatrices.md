@@ -12,16 +12,19 @@ You have already seen some functions that you can use on matrices:
 > gene4 <- c(5,12,19)
 > matrix1 <- matrix(c(gene1, gene2, gene3, gene4), nrow=4, ncol=3, byrow=T)
 > matrix1
-> ## Define the names of rows and columns
-> rownames(matrix1) <- c("gene1","gene2", "gene3", "gene4")
-> colnames(matrix1) <- c("condition1", "condition2", "condition3")
-> matrix1
-> dim(matrix1)
-> nrow(matrix1)
-> ncol(matrix1)
-> rownames(matrix1)
-> colnames(matrix1)
 ```
+
+<br>
+**Exercise 16:**
+
+  + Define the names of rows and columns as gene1 to gene4 and condition1 to condition3
+  + Print the number of rows and columns of matrix1 (one command)
+  + Print the number of rows
+  + Print the number of columns
+  + Print the row names
+  + print the col names
+<br>
+
 
 Below are some other useful functions:
 
@@ -50,11 +53,14 @@ You can also combine matrices by rows or columns:
 > gene8 <- c(54,112,1219)
 > matrix2 <- matrix(c(gene5, gene6, gene7, gene8), nrow=4, ncol=3, byrow=T)
 > matrix2
->
-> ## Combine matrix 1 and 2 by row
-> rbind(matrix1, matrix2)
->
-> ## Combine matrix 1 and 2 by column
-> cbind(matrix1, matrix2)  
 ```
+
+<br>
+
+**Exercise 17:**
+
+  + Combine matrix 1 and 2 by row using 'rbind'
+  + Combine matrix 1 and 2 by column using 'cbind'
+
+
 
