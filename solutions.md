@@ -172,3 +172,23 @@ if(current_sample == "B-cell"){
 }
 ```
 
+# Exercise 11:
+
+```
+iris
+head(iris)
+
+output <- character(nrow(iris))
+
+for(i in c(1:nrow(iris))){
+	
+  if(iris$Sepal.Length[i] > 5){
+	
+	output[i] <- "greater than 5"
+	
+  }else{		
+	output[i] <- "lesser than 5"		
+  }	
+}
+```
+
