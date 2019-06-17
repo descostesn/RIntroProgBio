@@ -303,6 +303,39 @@ for(i in seq_len(length(list_vec)))
 ```
 
 
+# Exercise 16:
+
+```
+## Define the names of rows and columns
+rownames(matrix1) <- c("gene1","gene2", "gene3", "gene4")
+colnames(matrix1) <- c("condition1", "condition2", "condition3")
+matrix1
+
+## Print the number of	rows and columns of matrix1 (one command)
+dim(matrix1)
+
+## Print the number of	rows
+nrow(matrix1)
+
+## Print the number of	columns
+ncol(matrix1)
+
+## Print the row names
+rownames(matrix1)
+
+## print the col names
+colnames(matrix1)
+```
+
+# Exercise 17:
+
+```
+## Combine matrix 1 and 2 by row
+rbind(matrix1, matrix2)
+
+## Combine matrix 1 and 2 by column
+cbind(matrix1, matrix2)
+```
 
 
 
