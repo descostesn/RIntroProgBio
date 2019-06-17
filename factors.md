@@ -38,6 +38,7 @@ If you did not understand the previous sentence, just have a look at the vector 
  
 **ALERT: In the following example, we will use some functions! Do not worry, you already used plenty of them: 5^3 (power), vector(), LETTERS, ':' (suite of numeric), names(), matrix(), rownames(), colnames(), data.frame() and list()**.
 
+Download the file samplecondition.txt [here](https://github.com/descostesn/RIntroProgBio/blob/master/samplecondition.txt)
 
 ```
 > ## Read the table containing the two columns condition and sample
@@ -68,7 +69,7 @@ The two first columns of your table are factors! Now we are going to see why it 
 ```
 
 Bam! In one command you can see that there are 171 KD samples, 173 KO samples and 156 WT samples. You are now going to make your first plot. We want to represent the number of gene expressed in function of the conditions. 
-\newline
+
 
 ```
  > plot(fi$geneExpressed~fi$condition, xlab="condition", ylab="Nb Expressed",
@@ -83,4 +84,4 @@ This command is decomposed into the following actions:
 * **ylab**: Defines the label to display on the y-axis.
 * **main**: Defines the title of the plot.
 
-  Plot is not the only function to create graphics. We will see later on how to visualize your data in different ways.
+
