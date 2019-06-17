@@ -25,6 +25,16 @@ Several functions enable to compare and manipulate vectors:
 > length(vec2)
 ```
 <br>
+
+**Exercise 14:**
+
+  + Create a list 'list_vec' with the vectors vec1 to vec4
+  + Use a for loop to print each vector
+  + Modify the for loop to print from vec2 to vec4 (omitting vec1)
+  + Do a 2 by 2 comparison of the equality of the vectors using a double for loop
+
+
+<br>
 **TIP**: If you want to compare two values, use also the isTRUE(all.equal()) form. The reason is that the way R stores floating values in memory can be tricky. Test the code below:
 <br>
 
@@ -71,13 +81,20 @@ R represents missing values by NA (**N**ot **A**vailable). You will very often f
 > x <- NA
 > y <- 10
 > z <- 32
-> vec5 <- c(x,y,z)
+> vec6 <- c(x,y,z)
 > is.na(x)
 > is.na(y)
 > is.na(z)
-> is.na(vec5)
-> anyNA(vec5)
+> is.na(vec6)
+> anyNA(vec6)
 ```
+
+**Exercise 15:**
+
+  + Remove duplicated values from vec5 and display it in reverted order
+  + Add vec6 to list_vec
+  + Using a for loop, display the vector of list_vec having missing values
+
 
 Very often it is necessary to find the elements of a vector satisfying a particular condition. The function which is very useful to achieve such goal is **which**:
 
