@@ -35,7 +35,7 @@ BAM! You just have used a R function with subsetting the vector! We will talk ab
 > c(1,2,3)
 > c("A", "B", "C")
 ```
-
+<br><br>
 ** Exercise 4:**
 
   + Create two vectors with 'combine' and affect the results to two variables
@@ -44,6 +44,7 @@ BAM! You just have used a R function with subsetting the vector! We will talk ab
   + Access the first element of the vector
   + Modify the value of the fifth element
 
+<br><br>
 
 Finally, let' see how to combine numbers and characters:
 
