@@ -89,12 +89,14 @@ R represents missing values by NA (**N**ot **A**vailable). You will very often f
 > anyNA(vec6)
 ```
 
+<br>
 **Exercise 15:**
 
   + Remove duplicated values from vec5 and display it in reverted order
   + Add vec6 to list_vec
   + Using a for loop, display the vector of list_vec having missing values
 
+<br>
 
 Very often it is necessary to find the elements of a vector satisfying a particular condition. The function which is very useful to achieve such goal is **which**:
 
