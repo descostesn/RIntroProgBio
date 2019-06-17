@@ -261,3 +261,48 @@ mean(vector_10)
 summary(randomvec1)
 ```
 
+# Exercise 14:
+
+```
+## Create a list 'list_vec' with the vectors vec1 to vec4
+vec1 <- c(1,2,3,4)
+vec2 <- c(2,3,4,5)
+vec3 <- c(1,2,5,6)
+vec4 <- c(2,4,5,5,4,1)
+list_vec <- list(vec1, vec2, vec3, vec4)
+
+## Use a for loop to print each vector
+for(i in seq_len(length(list_vec))) print(list_vec[[i]])
+
+## Modify the for loop to print from vec2 to vec4 (omitting vec1)
+for(i in 2:length(list_vec) ) print(list_vec[[i]])
+
+## Do a 2 by 2 comparison of the equality of the vectors using a double for loop
+for(i in seq_len(length(list_vec)-1))
+  for(j in 2:length(list_vec))
+    print(isTRUE(all.equal(list_vec[[i]], list_vec[[j]])))
+```
+
+#  Exercise 15:
+
+```
+## Remove duplicated values from vec5 and display it in reverted order
+rev(vec5[-duplicated(vec5)])
+
+## Add vec6 to list_vec
+x <- NA
+y <- 10
+z <- 32
+vec6 <- c(x,y,z)
+list_vec[[5]] <- vec6
+
+## Using a for loop, display the vector of list_vec having missing values
+for(i in seq_len(length(list_vec)))
+ if(anyNA(list_vec[[i]]))
+ print(list_vec[i])
+```
+
+
+
+
+
