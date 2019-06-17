@@ -139,3 +139,36 @@ gene2 == 16
 ## Check if gene1 expression is different than 5
 gene1 != 5
 ```
+
+# Exercise 9:
+
+```
+TRUE && FALSE
+FALSE && FALSE
+TRUE || FALSE
+FALSE || FALSE
+!FALSE
+!FALSE || FALSE
+(TRUE || FALSE) && (TRUE && FALSE)
+
+x <- 5
+y <- 6
+(x > 5 && y > 5) || (x == y)
+
+mutation1 <- "Tyr1"
+mutation2 <- "Ser5"
+cellType1 <- "yeast"
+cellType2  <- "mammals"
+mutation1 == "Ser5"
+cellType2 != "mammals"
+mutation2 == "Ser5" && cellType2 == "mammals"
+```
+
+# Exercise 10:
+
+```
+if(current_sample == "B-cell"){
+       print(expression_values[["CD19"]])
+}
+```
+
