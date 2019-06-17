@@ -338,7 +338,7 @@ cbind(matrix1, matrix2)
 ```
 
 
-# Exercise 17:
+# Exercise 18:
 
 ```
 ## Create two numeric vectors
