@@ -632,7 +632,15 @@
 &gt;
 &gt; ## Get the number of elements of a vector (or a list)
 &gt; length(vec2)
-</code></pre><p><br>
+</code></pre><p><br></p>
+<p><strong>Exercise 14:</strong></p>
+<ul>
+<li>Create a list &apos;list_vec&apos; with the vectors vec1 to vec4</li>
+<li>Use a for loop to print each vector</li>
+<li>Modify the for loop to print from vec2 to vec4 (omitting vec1)</li>
+<li>Do a 2 by 2 comparison of the equality of the vectors using a double for loop</li>
+</ul>
+<p><br>
 <strong>TIP</strong>: If you want to compare two values, use also the isTRUE(all.equal()) form. The reason is that the way R stores floating values in memory can be tricky. Test the code below:
 <br></p>
 <pre><code>&gt; x = seq(0,1,by=0.2)
@@ -667,13 +675,21 @@
 <pre><code>&gt; x &lt;- NA
 &gt; y &lt;- 10
 &gt; z &lt;- 32
-&gt; vec5 &lt;- c(x,y,z)
+&gt; vec6 &lt;- c(x,y,z)
 &gt; is.na(x)
 &gt; is.na(y)
 &gt; is.na(z)
-&gt; is.na(vec5)
-&gt; anyNA(vec5)
-</code></pre><p>Very often it is necessary to find the elements of a vector satisfying a particular condition. The function which is very useful to achieve such goal is <strong>which</strong>:</p>
+&gt; is.na(vec6)
+&gt; anyNA(vec6)
+</code></pre><p><br>
+<strong>Exercise 15:</strong></p>
+<ul>
+<li>Remove duplicated values from vec5 and display it in reverted order</li>
+<li>Add vec6 to list_vec</li>
+<li>Using a for loop, display the vector of list_vec having missing values</li>
+</ul>
+<p><br></p>
+<p>Very often it is necessary to find the elements of a vector satisfying a particular condition. The function which is very useful to achieve such goal is <strong>which</strong>:</p>
 <pre><code>&gt; ## Find the elements of vec4 that are higher than 3
 &gt; which(vec4 &gt; 3)
 &gt; ## Find the elements of vec4 that are higher than 3 and lower than 5
@@ -725,7 +741,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Manipulating vectors","level":"1.6.3","depth":2,"next":{"title":"Manipulating intervals","level":"1.6.4","depth":2,"path":"manipulatingintervals.md","ref":"manipulatingintervals.md","articles":[]},"previous":{"title":"Manipulating characters","level":"1.6.2","depth":2,"path":"manipulatingcharacters.md","ref":"manipulatingcharacters.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingvectors.md","mtime":"2019-06-11T14:14:57.294Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manipulating vectors","level":"1.6.3","depth":2,"next":{"title":"Manipulating intervals","level":"1.6.4","depth":2,"path":"manipulatingintervals.md","ref":"manipulatingintervals.md","articles":[]},"previous":{"title":"Manipulating characters","level":"1.6.2","depth":2,"path":"manipulatingcharacters.md","ref":"manipulatingcharacters.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingvectors.md","mtime":"2019-06-17T14:20:16.596Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T15:18:05.922Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

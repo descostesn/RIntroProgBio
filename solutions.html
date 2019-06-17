@@ -820,6 +820,75 @@ mean(vector_10)
 
 ## Summarize all values (min, max, etc)
 summary(randomvec1)
+</code></pre><h1 id="exercise-14">Exercise 14:</h1>
+<pre><code>## Create a list &apos;list_vec&apos; with the vectors vec1 to vec4
+vec1 &lt;- c(1,2,3,4)
+vec2 &lt;- c(2,3,4,5)
+vec3 &lt;- c(1,2,5,6)
+vec4 &lt;- c(2,4,5,5,4,1)
+list_vec &lt;- list(vec1, vec2, vec3, vec4)
+
+## Use a for loop to print each vector
+for(i in seq_len(length(list_vec))) print(list_vec[[i]])
+
+## Modify the for loop to print from vec2 to vec4 (omitting vec1)
+for(i in 2:length(list_vec) ) print(list_vec[[i]])
+
+## Do a 2 by 2 comparison of the equality of the vectors using a double for loop
+for(i in seq_len(length(list_vec)-1))
+  for(j in 2:length(list_vec))
+    print(isTRUE(all.equal(list_vec[[i]], list_vec[[j]])))
+</code></pre><h1 id="exercise-15">Exercise 15:</h1>
+<pre><code>## Remove duplicated values from vec5 and display it in reverted order
+rev(vec5[-duplicated(vec5)])
+
+## Add vec6 to list_vec
+x &lt;- NA
+y &lt;- 10
+z &lt;- 32
+vec6 &lt;- c(x,y,z)
+list_vec[[5]] &lt;- vec6
+
+## Using a for loop, display the vector of list_vec having missing values
+for(i in seq_len(length(list_vec)))
+ if(anyNA(list_vec[[i]]))
+ print(list_vec[i])
+</code></pre><h1 id="exercise-16">Exercise 16:</h1>
+<pre><code>## Define the names of rows and columns
+rownames(matrix1) &lt;- c(&quot;gene1&quot;,&quot;gene2&quot;, &quot;gene3&quot;, &quot;gene4&quot;)
+colnames(matrix1) &lt;- c(&quot;condition1&quot;, &quot;condition2&quot;, &quot;condition3&quot;)
+matrix1
+
+## Print the number of    rows and columns of matrix1 (one command)
+dim(matrix1)
+
+## Print the number of    rows
+nrow(matrix1)
+
+## Print the number of    columns
+ncol(matrix1)
+
+## Print the row names
+rownames(matrix1)
+
+## print the col names
+colnames(matrix1)
+</code></pre><h1 id="exercise-17">Exercise 17:</h1>
+<pre><code>## Combine matrix 1 and 2 by row
+rbind(matrix1, matrix2)
+
+## Combine matrix 1 and 2 by column
+cbind(matrix1, matrix2)
+</code></pre><h1 id="exercise-18">Exercise 18:</h1>
+<pre><code>## Create two numeric vectors
+vec1 &lt;- c(1,2,3,4)
+vec2 &lt;- c(5,6,7,8)
+
+## Use mapply to perform a 2 by 2 sum of values
+mapply(function(x,y) return(x+y), vec1, vec2)
+
+## A more clever solution is to use vectorisation
+vec1 + vec2
 </code></pre>
                                 
                                 </section>
@@ -859,7 +928,7 @@ summary(randomvec1)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Solutions","level":"1.7","depth":1,"previous":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"path":"interactingwiththeenvironmnet.md","ref":"interactingwiththeenvironmnet.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solutions.md","mtime":"2019-06-17T13:28:22.396Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Solutions","level":"1.7","depth":1,"previous":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"path":"interactingwiththeenvironmnet.md","ref":"interactingwiththeenvironmnet.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solutions.md","mtime":"2019-06-17T15:03:31.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T15:18:05.922Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
