@@ -192,3 +192,72 @@ for(i in c(1:nrow(iris))){
 }
 ```
 
+# Exercise 12:
+
+```
+x <- 2.849
+## Round number to upper or lower integer
+ceiling(x)
+floor(x)
+
+## Round including digits
+round(x, digits=1)
+## Compute natural, base 2 and base 10 logarithms
+x <- 5
+log(x)
+log2(x)
+log10(x)
+## Find the square root of 9
+x <- 9
+sqrt(x)
+```
+
+# Exercise 13:
+
+```
+## Extract the minimum and maximum values
+min(randomvec1)
+max(randomvec1)
+
+## Compute the cumulative sum of the vector
+vec1 <- c(1,2,3,4,5)
+result_cumsum <- cumsum(vec1)
+result_cumsum
+
+
+## Compute the cumulative sum of the vector vec1 <- c(1,2,3,4,5)
+vec1 <- c(1,2,3,4,5)
+result_cumsum <- cumsum(vec1)
+result_cumsum
+
+## Create a vector of 10 random values between 1 and 1000000
+randomvec2 <- sample(1:1000000, 10)
+randomvec2
+## sort the values
+sort(randomvec2)
+## Retrieve the indexes for sorting the values
+order(randomvec2)
+randomvec2[order(randomvec2)]
+
+## Generate values from 1 to 10 by 2
+seq(from = 1, to = 10, by = 2)
+## Generate values from 1 to 10
+seq(from = 1, to = 10)
+vector_10 <- seq_len(10)
+
+## Repeat the number 5 ten times
+rep(5, 10)
+
+## Reverse elements
+rev(vector_10)
+
+## Compute the sum of all values from 1 to 10
+sum(vector_10)
+
+## Compute the mean of all values
+mean(vector_10)
+
+## Summarize all values (min, max, etc)
+summary(randomvec1)
+```
+
