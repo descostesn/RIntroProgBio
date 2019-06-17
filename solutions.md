@@ -95,3 +95,33 @@ matrix1
 > ## Now same thing using numbers (called indexes)
 > matrix1[1:2,3]
 ```
+
+# Exercise 7:
+
+```
+## Create the list in one command (without intermediate variables)
+chd8Info <- list(Name = "CHD8",
+ Description = c("Chromodomain Helicase DNA Binding Protein",
+ "Helicase With SNF2 Domain", "ATP-Dependent Helicase CHD8", "HELSNF1",
+ "Chromodomain-Helicase-DNA-Binding Protein", "Axis Duplication Inhibitor"),
+ Database = data.frame(database = c("HGNC", "Entrez_Gene", "Ensembl", "OMIM"),
+ number = c(20153, 57680, 00000100888, 610528)))
+chd8Info
+
+## Display the gene name of chd8Info.
+chd8Info[[1]]
+chd8Info$Name
+
+## Display the second alias (Description) of Chd8.
+chd8Info[[2]][2]
+chd8Info$Description[2]
+
+##Display the third and fifth alias (Description) of Chd8.
+chd8Info[[2]][c(3,5)]
+chd8Info$Description[c(3,5)] 
+
+## Retrieve the Entrez gene ID of CHD8.
+chd8Info[[3]][2,]
+chd8Info$Database[2,]
+```
+
