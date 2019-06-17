@@ -338,4 +338,16 @@ cbind(matrix1, matrix2)
 ```
 
 
+# Exercise 17:
 
+```
+## Create two numeric vectors
+vec1 <- c(1,2,3,4)
+vec2 <- c(5,6,7,8)
+
+## Use mapply to perform a 2 by 2 sum of values
+mapply(function(x,y) return(x+y), vec1, vec2)
+
+## A more clever solution is to use vectorisation
+vec1 + vec2
+```
