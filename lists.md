@@ -26,14 +26,6 @@ Because you are now a R pro, we are going to use variables to create the list.
 > ## Give a name to each element
 > names(chd8Info) <- c("Name", "Description", "Database")
 > chd8Info
-> ## You could have created the list in one command
-> chd8Info <- list(Name = "CHD8", 
-+ Description = c("Chromodomain Helicase DNA Binding Protein", 
-+ "Helicase With SNF2 Domain", "ATP-Dependent Helicase CHD8", "HELSNF1", 
-+ "Chromodomain-Helicase-DNA-Binding Protein", "Axis Duplication Inhibitor"), 
-+ Database = data.frame(database = c("HGNC", "Entrez_Gene", "Ensembl", "OMIM"), 
-+ number = c(20153, 57680, 00000100888, 610528)))
-> chd8Info
 ```
 
 If you have tested each line, you saw that before giving names to the list, each element was referenced with "[[". As we used "[" to access an element of a vector, we will use "[[" to access the elements of a list.
@@ -48,5 +40,4 @@ If you have tested each line, you saw that before giving names to the list, each
 > is(chd8Info[1])
 ```
 
-**ALERT**: The next section is a do it yourself! Solutions will be provided individually by email. You have until next Friday to solve the problems (To be honest, if you followed this workshop, it should be quick, just read carefully each section to remember how
-to access the different types of data).
+
