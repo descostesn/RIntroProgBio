@@ -77,3 +77,11 @@ cat("The mean value of ", y, " is ", mean(y), "\n")
 }, mylist1, mylist2)
 ```
 
+<br>
+
+**Exercise 18:**
+
+   + Create two numeric vectors of equal size
+   + Use mapply to perform a 2 by 2 sum of values
+   + Could you use a more clever solution?
+   
