@@ -19,14 +19,10 @@ Let's now use the above structure to "formulate" a biological problem. If my sam
 + }else{
 + 	print(expression_values["CD4"])
 +}
-> ## Now change the value of current_sample and see the difference
-> current_sample <- "T-cell"
-> if(current_sample == "B-cell"){
-+ 	print(expression_values["CD19"])
-+ }else{
-+ 	print(expression_values["CD4"])
-+}
 ```
+
+** Exercise**: Change the value of current_sample to "T-cell" and see the difference
+
 
 **Alert**: If I have more than two cell-types, I am stuck! You are right, let's add a third cell-type 'macrophage' for which we want to know the expression of the marker CD86.
 
@@ -46,8 +42,8 @@ Let's now use the above structure to "formulate" a biological problem. If my sam
 +}
 ```
 
-As you probably understood, you can keep adding conditions. You can add even one million conditions if you want to use one million different cells! But do not worry, bioinformaticians made some resources and databases for you to avoid coding everything that you learned in your book. **The aim of programming (with R) is to perform some complex tasks with a minimum number of code lines.** To formalize the code above, you can think about the structure:
-\newline
+As you probably understood, you can keep adding conditions. You can add even one million conditions if you want to use one million different cells! But do not worry, bioinformaticians made some resources and databases for you to avoid coding everything. **The aim of programming (with R) is to perform some complex tasks with a minimum number of code lines.** To formalize the code above, you can think about the structure:
+
 
 	if(condition 1){
 		block of code 1
