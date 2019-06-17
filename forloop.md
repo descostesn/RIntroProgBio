@@ -54,5 +54,10 @@ Do you see the problem? That is very repetitive and a lot of code. Fortunately, 
 +}
 ```
 
-**WOW!** Super efficient isn't it? Now that you know how a loop works, you are going to see that using while is also very powerful.
+**WOW!** Super efficient isn't it? 
 
+**Exercise 11:**
+  + R has some pre-loaded data that you can use. Enter 'iris' in your console.
+  + To see only the first lines, try 'head(iris)'.
+  + For each row of iris, if the value of the 'Sepal.Length' is greater than 5, store the value "greater than 5" in the empty vector 'output'. Else, store the value "lesser than 5".
+  
