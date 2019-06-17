@@ -125,3 +125,17 @@ chd8Info[[3]][2,]
 chd8Info$Database[2,]
 ```
 
+# Exercise 8:
+
+```
+## Check if gene1 expression is greater than gene2 expression
+gene1 > gene2
+## Check if gene1 expression is less than or equal to 5
+gene1 <= 5
+## Check if gene2 expression is greater than or equal to 20
+gene2 >= 20
+## Check if gene2 expression is equal to 16
+gene2 == 16
+## Check if gene1 expression is different than 5
+gene1 != 5
+```
