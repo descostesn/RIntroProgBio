@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>if-else · GitBook</title>
+        <title>Solutions · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="forloop.html" />
     
-    
-    <link rel="prev" href="if.html" />
+    <link rel="prev" href="interactingwiththeenvironmnet.html" />
     
 
     </head>
@@ -361,7 +359,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.2" data-path="ifelse.html">
+        <li class="chapter " data-level="1.5.2" data-path="ifelse.html">
             
                 <a href="ifelse.html">
             
@@ -554,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="solutions.html">
+        <li class="chapter active" data-level="1.7" data-path="solutions.html">
             
                 <a href="solutions.html">
             
@@ -597,7 +595,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >if-else</a>
+        <a href="." >Solutions</a>
     </h1>
 </div>
 
@@ -612,42 +610,216 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="if-else">if-else</h1>
-<p>The basic structure is:</p>
-<pre><code>if(condition){
-    block of code
-}else{
-    block of code
+                                <h1 id="exercise-1">Exercise 1:</h1>
+<pre><code>## Enter a number
+42
+## Enter a decimal number
+42.1
+##Perform addition
+39 + 3
+## Perform subtraction
+58 - 16
+## Perform multiplication
+6 * 7
+## Perform division
+8 / 3
+## Compute the remainder (modulo: 10 = (3x3) + 1)
+10 %% 3
+## Use power
+5^3
+## Combine operators
+((10 + 15) / 5) - 3*2
+</code></pre><h1 id="exercise-2">Exercise 2</h1>
+<pre><code>## Change the value of &apos;a&apos;
+a &lt;- 8
+# Display the value of &apos;a&apos;
+a
+## Perform an addition and use the result in a division
+a &lt;- 3 + 5
+b &lt;- a/4
+## What is now the value of b?
+b
+</code></pre><h1 id="exercise-3">Exercise 3</h1>
+<pre><code>## Using double quotes works too
+a &lt;- &quot;b&quot;
+a
+## Give &apos;a&apos; a sentence
+a &lt;- &apos;Hello World&apos;
+a
+## What is happening if you use a quote inside a sentence?
+test &lt;- &apos;it&apos;s a R workshop&apos;
+</code></pre><h1 id="exercise-4">Exercise 4</h1>
+<pre><code>## Let&apos;s use variables to combine vectors
+vector1 &lt;- c(1,2,3)
+vector2 &lt;- c(8,9,10)
+vector3 &lt;- c(vector1, vector2)
+vector3
+
+## Create a vector with values from 11 to 25
+vector1 &lt;- 11:25
+vector1
+## Access the first element
+vector1[1]
+# Modify the 5th element
+vector1[5] &lt;- 100
+vector1
+</code></pre><h1 id="exercise-5">Exercise 5</h1>
+<pre><code>##  Create 4 vectors &apos;gene1&apos;, &apos;gene2&apos;, &apos;gene3&apos;,    &apos;gene4&apos;    each containing 3 numeric values of expression
+gene1 &lt;- c(8,9,15)
+gene2 &lt;- c(17,12,13)
+gene3 &lt;- c(11,15,7)
+gene4 &lt;- c(5,12,19)
+
+## Combine the    vectors    with &apos;c&apos; and create a matrix &apos;matrix1&apos; with each line containing a gene
+matrix1 &lt;- matrix(c(gene1, gene2, gene3, gene4), nrow=4, ncol=3, byrow=T)
+matrix1
+
+## Define the names of rows and columns
+rownames(matrix1) &lt;- c(&quot;gene1&quot;,&quot;gene2&quot;, &quot;gene3&quot;, &quot;gene4&quot;)
+colnames(matrix1) &lt;- c(&quot;condition1&quot;, &quot;condition2&quot;, &quot;condition3&quot;)
+matrix1
+</code></pre><h1 id="exercise-6">Exercise 6:</h1>
+<pre><code>&gt; ## Access the values of gene 1 and 2 in the third condition using row and column names
+&gt; matrix1[c(&quot;gene1&quot;, &quot;gene2&quot;), &quot;condition3&quot;]
+&gt; ## Now same thing using numbers (called indexes)
+&gt; matrix1[1:2,3]
+</code></pre><h1 id="exercise-7">Exercise 7:</h1>
+<pre><code>## Create the list in one command (without intermediate variables)
+chd8Info &lt;- list(Name = &quot;CHD8&quot;,
+ Description = c(&quot;Chromodomain Helicase DNA Binding Protein&quot;,
+ &quot;Helicase With SNF2 Domain&quot;, &quot;ATP-Dependent Helicase CHD8&quot;, &quot;HELSNF1&quot;,
+ &quot;Chromodomain-Helicase-DNA-Binding Protein&quot;, &quot;Axis Duplication Inhibitor&quot;),
+ Database = data.frame(database = c(&quot;HGNC&quot;, &quot;Entrez_Gene&quot;, &quot;Ensembl&quot;, &quot;OMIM&quot;),
+ number = c(20153, 57680, 00000100888, 610528)))
+chd8Info
+
+## Display the gene name of chd8Info.
+chd8Info[[1]]
+chd8Info$Name
+
+## Display the second alias (Description) of Chd8.
+chd8Info[[2]][2]
+chd8Info$Description[2]
+
+##Display the third and fifth alias (Description) of Chd8.
+chd8Info[[2]][c(3,5)]
+chd8Info$Description[c(3,5)] 
+
+## Retrieve the Entrez gene ID of CHD8.
+chd8Info[[3]][2,]
+chd8Info$Database[2,]
+</code></pre><h1 id="exercise-8">Exercise 8:</h1>
+<pre><code>## Check if gene1 expression is greater than gene2 expression
+gene1 &gt; gene2
+## Check if gene1 expression is less than or equal to 5
+gene1 &lt;= 5
+## Check if gene2 expression is greater than or equal to 20
+gene2 &gt;= 20
+## Check if gene2 expression is equal to 16
+gene2 == 16
+## Check if gene1 expression is different than 5
+gene1 != 5
+</code></pre><h1 id="exercise-9">Exercise 9:</h1>
+<pre><code>TRUE &amp;&amp; FALSE
+FALSE &amp;&amp; FALSE
+TRUE || FALSE
+FALSE || FALSE
+!FALSE
+!FALSE || FALSE
+(TRUE || FALSE) &amp;&amp; (TRUE &amp;&amp; FALSE)
+
+x &lt;- 5
+y &lt;- 6
+(x &gt; 5 &amp;&amp; y &gt; 5) || (x == y)
+
+mutation1 &lt;- &quot;Tyr1&quot;
+mutation2 &lt;- &quot;Ser5&quot;
+cellType1 &lt;- &quot;yeast&quot;
+cellType2  &lt;- &quot;mammals&quot;
+mutation1 == &quot;Ser5&quot;
+cellType2 != &quot;mammals&quot;
+mutation2 == &quot;Ser5&quot; &amp;&amp; cellType2 == &quot;mammals&quot;
+</code></pre><h1 id="exercise-10">Exercise 10:</h1>
+<pre><code>if(current_sample == &quot;B-cell&quot;){
+       print(expression_values[[&quot;CD19&quot;]])
 }
-</code></pre><p>Let&apos;s now use the above structure to &quot;formulate&quot; a biological problem. If my sample is of type B-cell, retrieve expression of CD19, else retrieve CD4 (the sample is T-cell). Remember that YOU tell the program what to do with the knowledge that YOU have. Translating this statement into a code is super easy too:</p>
-<pre><code>&gt; ## Now retrieve CD19 expression only if the current sample is B-cell
-&gt; if(current_sample == &quot;B-cell&quot;){
-+     print(expression_values[&quot;CD19&quot;])
-+ }else{
-+     print(expression_values[&quot;CD4&quot;])
-+}
-</code></pre><p><strong> Exercise</strong>: Change the value of current_sample to &quot;T-cell&quot; and see the difference</p>
-<p><strong>Alert</strong>: If I have more than two cell-types, I am stuck! You are right, let&apos;s add a third cell-type &apos;macrophage&apos; for which we want to know the expression of the marker CD86.</p>
-<pre><code>&gt; ## Create the variables containing genes expression and cell type
-&gt; expression_values &lt;- c(100, 200, 300)
-&gt; names(expression_values) &lt;- c(&quot;CD19&quot;, &quot;CD4&quot;, &quot;CD86&quot;)
-&gt; current_sample &lt;- &quot;B-cell&quot;
-&gt; ## Now retrieve CD19 expression only if the current sample is B-cell
-&gt; if(current_sample == &quot;B-cell&quot;){
-+     print(expression_values[&quot;CD19&quot;])
-+ }else if(current_sample == &quot;T-cell&quot;){
-+     print(expression_values[&quot;CD4&quot;])
-+ }else{
-+     print(expression_values[&quot;CD86&quot;])
-+}
-</code></pre><p>As you probably understood, you can keep adding conditions. You can add even one million conditions if you want to use one million different cells! But do not worry, bioinformaticians made some resources and databases for you to avoid coding everything. <strong>The aim of programming (with R) is to perform some complex tasks with a minimum number of code lines.</strong> To formalize the code above, you can think about the structure:</p>
-<pre><code>if(condition 1){
-    block of code 1
-}else if(condition 2){
-    block of code 2
-}else{
-    block of code 3
+</code></pre><h1 id="exercise-11">Exercise 11:</h1>
+<pre><code>iris
+head(iris)
+
+output &lt;- character(nrow(iris))
+
+for(i in c(1:nrow(iris))){
+
+  if(iris$Sepal.Length[i] &gt; 5){
+
+    output[i] &lt;- &quot;greater than 5&quot;
+
+  }else{        
+    output[i] &lt;- &quot;lesser than 5&quot;        
+  }    
 }
+</code></pre><h1 id="exercise-12">Exercise 12:</h1>
+<pre><code>x &lt;- 2.849
+## Round number to upper or lower integer
+ceiling(x)
+floor(x)
+
+## Round including digits
+round(x, digits=1)
+## Compute natural, base 2 and base 10 logarithms
+x &lt;- 5
+log(x)
+log2(x)
+log10(x)
+## Find the square root of 9
+x &lt;- 9
+sqrt(x)
+</code></pre><h1 id="exercise-13">Exercise 13:</h1>
+<pre><code>## Extract the minimum and maximum values
+min(randomvec1)
+max(randomvec1)
+
+## Compute the cumulative sum of the vector
+vec1 &lt;- c(1,2,3,4,5)
+result_cumsum &lt;- cumsum(vec1)
+result_cumsum
+
+
+## Compute the cumulative sum of the vector vec1 &lt;- c(1,2,3,4,5)
+vec1 &lt;- c(1,2,3,4,5)
+result_cumsum &lt;- cumsum(vec1)
+result_cumsum
+
+## Create a vector of 10 random values between 1 and 1000000
+randomvec2 &lt;- sample(1:1000000, 10)
+randomvec2
+## sort the values
+sort(randomvec2)
+## Retrieve the indexes for sorting the values
+order(randomvec2)
+randomvec2[order(randomvec2)]
+
+## Generate values from 1 to 10 by 2
+seq(from = 1, to = 10, by = 2)
+## Generate values from 1 to 10
+seq(from = 1, to = 10)
+vector_10 &lt;- seq_len(10)
+
+## Repeat the number 5 ten times
+rep(5, 10)
+
+## Reverse elements
+rev(vector_10)
+
+## Compute the sum of all values from 1 to 10
+sum(vector_10)
+
+## Compute the mean of all values
+mean(vector_10)
+
+## Summarize all values (min, max, etc)
+summary(randomvec1)
 </code></pre>
                                 
                                 </section>
@@ -675,14 +847,10 @@
 
             
                 
-                <a href="if.html" class="navigation navigation-prev " aria-label="Previous page: if">
+                <a href="interactingwiththeenvironmnet.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Interacting with the environment">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="forloop.html" class="navigation navigation-next " aria-label="Next page: for loop">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -691,7 +859,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"if-else","level":"1.5.2","depth":2,"next":{"title":"for loop","level":"1.5.3","depth":2,"path":"forloop.md","ref":"forloop.md","articles":[]},"previous":{"title":"if","level":"1.5.1","depth":2,"path":"if.md","ref":"if.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ifelse.md","mtime":"2019-06-17T12:22:49.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Solutions","level":"1.7","depth":1,"previous":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"path":"interactingwiththeenvironmnet.md","ref":"interactingwiththeenvironmnet.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solutions.md","mtime":"2019-06-17T13:28:22.396Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

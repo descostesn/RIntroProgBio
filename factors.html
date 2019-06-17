@@ -554,6 +554,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="solutions.html">
+            
+                <a href="solutions.html">
+            
+                    
+                    Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -622,6 +635,7 @@ If you did not understand the previous sentence, just have a look at the vector 
 &gt; condition_factor
 </code></pre><p> Still don&apos;t see the point? ok. Imagine now that you have 500 samples in an excel spreadsheet, one column is the name of the condition, one column is the sample and one is the number of expressed genes. And now, you are not the super scientist but the student who came two years after, and who was asked to reanalyze your data while you are putting your golfbag in your Mercedes to rush to the clubhouse to see the pictures of the new house of your best friend Arnold. That would be super nice if you could know the different conditions of the experiment in a few lines. For that, you typically can use factors. We are now going to see examples showing why <strong>factors are very useful for summary statistics and plots</strong>.</p>
 <p><strong>ALERT: In the following example, we will use some functions! Do not worry, you already used plenty of them: 5^3 (power), vector(), LETTERS, &apos;:&apos; (suite of numeric), names(), matrix(), rownames(), colnames(), data.frame() and list()</strong>.</p>
+<p>Download the file samplecondition.txt <a href="https://github.com/descostesn/RIntroProgBio/blob/master/samplecondition.txt" target="_blank">here</a></p>
 <pre><code>&gt; ## Read the table containing the two columns condition and sample
 &gt; fi &lt;- read.table(&quot;samplecondition.txt&quot;, header=TRUE)
 &gt; ## Visualize the first lines of the table
@@ -642,8 +656,7 @@ If you did not understand the previous sentence, just have a look at the vector 
 &gt; is(fi$geneExpressed)
 </code></pre><p>The two first columns of your table are factors! Now we are going to see why it is super useful:</p>
 <pre><code>&gt; summary(fi)
-</code></pre><p>Bam! In one command you can see that there are 171 KD samples, 173 KO samples and 156 WT samples. You are now going to make your first plot. We want to represent the number of gene expressed in function of the conditions. 
-\newline</p>
+</code></pre><p>Bam! In one command you can see that there are 171 KD samples, 173 KO samples and 156 WT samples. You are now going to make your first plot. We want to represent the number of gene expressed in function of the conditions. </p>
 <pre><code> &gt; plot(fi$geneExpressed~fi$condition, xlab=&quot;condition&quot;, ylab=&quot;Nb Expressed&quot;,
  + main=&quot;Nb of Gene expressed per condition&quot;)
 </code></pre><p>This command is decomposed into the following actions:</p>
@@ -652,9 +665,7 @@ If you did not understand the previous sentence, just have a look at the vector 
 <li><strong>fi$geneExpressed~fi$condition</strong>: This is a formula. What is on the left is the response and on the right the explanatory variable. You can read it as &quot;plot the number of genes expressed per condition&quot;.</li>
 <li><strong>xlab</strong>: Defines the label to display on the x-axis.</li>
 <li><strong>ylab</strong>: Defines the label to display on the y-axis.</li>
-<li><p><strong>main</strong>: Defines the title of the plot.</p>
-<p>Plot is not the only function to create graphics. We will see later on how to visualize your data in different ways.</p>
-</li>
+<li><strong>main</strong>: Defines the title of the plot.</li>
 </ul>
 
                                 
@@ -699,7 +710,7 @@ If you did not understand the previous sentence, just have a look at the vector 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Factors","level":"1.4.1","depth":2,"next":{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]},"previous":{"title":"More advanced data type","level":"1.4","depth":1,"path":"moreadvancesdatatype.md","ref":"moreadvancesdatatype.md","articles":[{"title":"Factors","level":"1.4.1","depth":2,"path":"factors.md","ref":"factors.md","articles":[]},{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"factors.md","mtime":"2019-06-11T12:58:30.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Factors","level":"1.4.1","depth":2,"next":{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]},"previous":{"title":"More advanced data type","level":"1.4","depth":1,"path":"moreadvancesdatatype.md","ref":"moreadvancesdatatype.md","articles":[{"title":"Factors","level":"1.4.1","depth":2,"path":"factors.md","ref":"factors.md","articles":[]},{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"factors.md","mtime":"2019-06-17T11:15:26.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

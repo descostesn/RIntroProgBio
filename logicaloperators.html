@@ -554,6 +554,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="solutions.html">
+            
+                <a href="solutions.html">
+            
+                    
+                    Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -600,36 +613,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="logical-operators">Logical operators</h1>
-<p>  Logical operators enable to carry out boolean operations such as AND, OR, NOT. This is very useful if you want several conditions to be true or false. For instance, you might want to consider a set of cells dead if the Ser5 amino-acid of RNA Polymerase II was mutated AND the type of cell is mammalian. Again, before seeing how to code that, let&apos;start with simple examples.
-\newline</p>
+<p>  Logical operators enable to carry out boolean operations such as AND, OR, NOT. This is very useful if you want several conditions to be true or false. For instance, you might want to consider a set of cells as &quot;dead&quot; if the Ser5 amino-acid of RNA Polymerase II was mutated AND the type of cell is mammalian. Again, before seeing how to code that, let&apos;start with simple examples.</p>
 <pre><code>&gt; ## The AND operation is done with the symbol &apos;&amp;&amp;&apos;
 &gt; TRUE &amp;&amp; TRUE
-&gt; TRUE &amp;&amp; FALSE
-&gt; FALSE &amp;&amp; FALSE
 &gt; ## The OR operation is done with the symbol &apos;||&apos;
 &gt; TRUE || TRUE
-&gt; TRUE || FALSE
-&gt; FALSE || FALSE
 &gt; ## The NOT operation is done with the symbol &apos;!&apos;
 &gt; !TRUE
-&gt; !FALSE 
-&gt; !FALSE || FALSE
-&gt; ## You can use parentheses to create logical groups
-&gt; (TRUE || FALSE) &amp;&amp; (TRUE &amp;&amp; FALSE)
-</code></pre><p><strong>Exercise</strong></p>
-<ul>
-<li><p>Define two variables x and y with the values 5 and 6. Can you guess the result of (x &gt; 5 &amp;&amp; y &gt; 5) || (x == y) ?</p>
-</li>
-<li><p>Define the following variables: mutation1 &lt;- &quot;Tyr1&quot;, mutation2 &lt;- &quot;Ser5&quot;, cellType1 &lt;- &quot;yeast&quot;, cellType2  &lt;- &quot;mammals&quot;. Code and verify the following statement:</p>
-<ul>
-<li>mutation1 EQUAL &quot;Ser5&quot;</li>
-<li>cellType2 DIFFERENT THAN &quot;mammals&quot;</li>
-<li>mutation2 EQUAL &quot;Ser5&quot; AND cellType2 EQUAL &quot;mammals&quot;      </li>
-</ul>
-</li>
-</ul>
-<p><br><br>
-Keep in mind the following rules when coding:</p>
+</code></pre><p>Keep in mind the following rules when coding:</p>
 <table>
 <thead>
 <tr>
@@ -649,7 +640,7 @@ Keep in mind the following rules when coding:</p>
 </tbody>
 </table>
 <p><br>
-<strong>Why?</strong> Think about the following analogy: AND is multiplication and OR is addition. 1 is TRUE and 0 is FALSE. Then you replace the value in the table above: </p>
+<strong>Why?</strong> Think about the following analogy: AND is multiplication and OR is addition. 1 is TRUE and 0 is FALSE. Then you replace the value in the table above:</p>
 <table>
 <thead>
 <tr>
@@ -668,6 +659,22 @@ Keep in mind the following rules when coding:</p>
 </tr>
 </tbody>
 </table>
+<p><br><br>
+<strong>Exercise 9:</strong></p>
+<ul>
+<li>Predict and test the following expressions: &quot;TRUE &amp;&amp; FALSE&quot;; &quot;FALSE &amp;&amp; FALSE&quot;.</li>
+<li>Predict and test the following expressions: &quot;TRUE || FALSE&quot;; &quot;FALSE || FALSE&quot;.</li>
+<li>Predict and test the following expressions: &quot;!FALSE&quot;; &quot;!FALSE || FALSE&quot;</li>
+<li>Predict and test the following expression: (TRUE || FALSE) &amp;&amp; (TRUE &amp;&amp; FALSE)</li>
+<li>Define two variables x and y with the values 5 and 6. Can you guess the result of (x &gt; 5 &amp;&amp; y &gt; 5) || (x == y) ?</li>
+<li>Define the following variables: mutation1 &lt;- &quot;Tyr1&quot;, mutation2 &lt;- &quot;Ser5&quot;, cellType1 &lt;- &quot;yeast&quot;, cellType2  &lt;- &quot;mammals&quot;. Code and verify the following statement:<ul>
+<li>mutation1 EQUAL &quot;Ser5&quot;</li>
+<li>cellType2 DIFFERENT THAN &quot;mammals&quot;</li>
+<li>mutation2 EQUAL &quot;Ser5&quot; AND cellType2 EQUAL &quot;mammals&quot;      </li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
 <p>  You can also apply the logical operators on vectors <strong>but</strong> there is a subtlety. You need element-wise operators which are <strong>simple</strong> &apos;|&apos; or &apos;&amp;&apos; (we used double &apos;||&apos; and &apos;&amp;&amp;&apos; which are <strong>not</strong> element-wise operators). Try the following code:</p>
 <pre><code>&gt; ## Define two logical vectors
 &gt; vec1 &lt;- c(TRUE, FALSE, TRUE)
@@ -758,7 +765,7 @@ Keep in mind the following rules when coding:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Logical operators","level":"1.4.2.2","depth":3,"next":{"title":"Control structures","level":"1.5","depth":1,"path":"controlstructures.md","ref":"controlstructures.md","articles":[{"title":"if","level":"1.5.1","depth":2,"path":"if.md","ref":"if.md","articles":[]},{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},{"title":"for loop","level":"1.5.3","depth":2,"path":"forloop.md","ref":"forloop.md","articles":[]},{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]}]},"previous":{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"logicaloperators.md","mtime":"2019-06-11T14:01:00.628Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Logical operators","level":"1.4.2.2","depth":3,"next":{"title":"Control structures","level":"1.5","depth":1,"path":"controlstructures.md","ref":"controlstructures.md","articles":[{"title":"if","level":"1.5.1","depth":2,"path":"if.md","ref":"if.md","articles":[]},{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},{"title":"for loop","level":"1.5.3","depth":2,"path":"forloop.md","ref":"forloop.md","articles":[]},{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]}]},"previous":{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"logicaloperators.md","mtime":"2019-06-17T12:03:40.447Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

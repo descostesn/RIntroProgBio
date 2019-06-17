@@ -554,6 +554,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="solutions.html">
+            
+                <a href="solutions.html">
+            
+                    
+                    Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -600,30 +613,29 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="relational-operators">Relational operators</h1>
-<p>Before writing the code to perform the selection of CD19 or CD4, let start playing a bit with logicals. The code below is an introduction to &apos;logical operators&apos;:</p>
+<p>Before writing the code to perform the selection of CD19 or CD4, let start playing a bit with logicals. <strong>Relational operators</strong> enable performing comparisons:</p>
+<pre><code>    &lt;        lower than
+    &gt;        greater than
+    &lt;=       less than or equal to
+    &gt;=       greater than or equal to
+    ==       equal to
+    !=       not equal to
+</code></pre><p>For instance:</p>
 <pre><code>&gt; ## Define two genes variables gene1 and gene2 containing expression values 
 &gt; gene1 &lt;- 5
 &gt; gene2 &lt;- 16
 &gt; ## Check if gene1 expression is lower than gene2 expression
 &gt; gene1 &lt; gene2
-&gt; ## Check if gene1 expression is greater than gene2 expression
-&gt; gene1 &gt; gene2
-&gt; ## Check if gene1 expression is less than or equal to 5
-&gt; gene1 &lt;= 5
-&gt; ## Check if gene2 expression is greater than or equal to 20
-&gt; gene2 &gt;= 20
-&gt; ## Check if gene2 expression is equal to 16
-&gt; gene2 == 16
-&gt; ## Check if gene1 expression is different than 5
-&gt; gene1 != 5
-</code></pre><p> The tests above use <strong>relational operators</strong>:</p>
-<pre><code>&lt;        lower than               
-&gt;        greater than             
-&lt;=       less than or equal to
-&gt;=       greater than or equal to
-==       equal to                
-!=       not equal to 
-</code></pre><p> The beauty of R is that it is a vectorized language. Therefore, the relational operators are also working on vectors. You might want to compare the expressions of specific genes in two conditions. For that, we use again the genes that we saw in the &apos;vectors&apos; section: &quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;.</p>
+</code></pre><p><strong>Exercise 8</strong>:</p>
+<ul>
+<li>Check if gene1 expression is greater than gene2 expression</li>
+<li>Check if gene1 expression is less than or equal to 5</li>
+<li>Check if gene2 expression is greater than or equal to 20</li>
+<li>Check if gene2 expression is equal to 16</li>
+<li>Check if gene1 expression is different (not equal to) than 5</li>
+</ul>
+<p><br></p>
+<p> The beauty of R is that it is a <strong>vectorized language</strong>. Therefore, the relational operators are also working on vectors. You might want to compare the expressions of specific genes in two conditions. For that, we use again the genes that we saw in the &apos;vectors&apos; section: &quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;.</p>
 <pre><code>&gt; ## Define the expression values of the 4 genes in condition 1
 &gt; condition1 &lt;- c(34,52,88,65)
 &gt; ## Define the expression values of the 4 genes in condition 2
@@ -634,7 +646,7 @@
 &gt; names(condition2) &lt;- c(&quot;CHD8&quot;,&quot;MALAT1&quot;,&quot;HoxC&quot;,&quot;Nanog&quot;)
 &gt; ## Check if the genes are more highly expressed in condition1
 &gt; condition1 &gt; condition2
-</code></pre><p><strong>Exercise: What would happen if your vectors do not have the same number of values?</strong></p>
+</code></pre><p><strong>Question: What would happen if your vectors do not have the same number of values?</strong></p>
 
                                 
                                 </section>
@@ -678,7 +690,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Relational operators","level":"1.4.2.1","depth":3,"next":{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]},"previous":{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"relationaloperators.md","mtime":"2019-06-11T13:53:34.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Relational operators","level":"1.4.2.1","depth":3,"next":{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]},"previous":{"title":"Booleans","level":"1.4.2","depth":2,"path":"booleans.md","ref":"booleans.md","articles":[{"title":"Relational operators","level":"1.4.2.1","depth":3,"path":"relationaloperators.md","ref":"relationaloperators.md","articles":[]},{"title":"Logical operators","level":"1.4.2.2","depth":3,"path":"logicaloperators.md","ref":"logicaloperators.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"relationaloperators.md","mtime":"2019-06-17T11:30:21.425Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

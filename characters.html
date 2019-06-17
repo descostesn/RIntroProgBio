@@ -554,6 +554,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="solutions.html">
+            
+                <a href="solutions.html">
+            
+                    
+                    Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -600,19 +613,19 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="characters">Characters</h1>
-<p>You probably guessed what is covered in this section. You can also affect letters, words, and even sentences to your variables! This can be very useful, what if you want to perform operations on DNA or protein sequences? R can do it for you! Before using R to search DNA sequences or to generate reverse complements, let&apos;s start with simple manipulations. </p>
+<p>You probably guessed what is covered in this section. You can also affect letters, words, and even sentences to your variables! This can be very useful: What if you want to perform operations on DNA or protein sequences? R can do it for you! Before using R to search DNA sequences or to generate reverse complements, let&apos;s start with simple manipulations. </p>
 <pre><code>&gt; ## Declare a variable &apos;a&apos; containing the letter (character) &apos;b&apos;
 &gt; a &lt;- &apos;b&apos;
 &gt; a
-&gt; ## Using double quotes works too
-&gt; a &lt;- &quot;b&quot;
-&gt; a
-&gt; ## Give &apos;a&apos; a sentence
-&gt; a &lt;- &apos;Hello World&apos;
-&gt; a
-&gt; ## What is happening if you use a quote inside a sentence?
-&gt; test &lt;- &apos;it&apos;s a R workshop&apos;
-&gt; test &lt;- &apos;it\&apos;s a R workshop&apos;
+</code></pre><p><strong> Exercise 3:</strong></p>
+<ul>
+<li>Use double quotes to affect b to a and see the result</li>
+<li>Give &apos;a&apos; a sentence</li>
+<li>What would happen if you have a quote inside your quote? Try affecting the sentence - it&apos;s a R workshop - to a variable</li>
+</ul>
+<p><br></p>
+<p>The solution to the last question is to use backslash:</p>
+<pre><code>&gt; test &lt;- &apos;it\&apos;s a R workshop&apos;
 &gt; test
 &gt; test &lt;- &quot;it\&apos;s a R workshop&quot;
 &gt; test
@@ -659,7 +672,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Characters","level":"1.3.1","depth":2,"next":{"title":"Vectors","level":"1.3.2","depth":2,"path":"vectors.md","ref":"vectors.md","articles":[]},"previous":{"title":"Data Types","level":"1.3","depth":1,"path":"datatypes.md","ref":"datatypes.md","articles":[{"title":"Characters","level":"1.3.1","depth":2,"path":"characters.md","ref":"characters.md","articles":[]},{"title":"Vectors","level":"1.3.2","depth":2,"path":"vectors.md","ref":"vectors.md","articles":[]},{"title":"Matrices","level":"1.3.3","depth":2,"path":"matrices.md","ref":"matrices.md","articles":[]},{"title":"Data frames","level":"1.3.4","depth":2,"path":"dataframes.md","ref":"dataframes.md","articles":[]},{"title":"Lists","level":"1.3.5","depth":2,"path":"lists.md","ref":"lists.md","articles":[]},{"title":"Exercises","level":"1.3.6","depth":2,"path":"exo1.md","ref":"exo1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"characters.md","mtime":"2019-06-11T12:44:32.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Characters","level":"1.3.1","depth":2,"next":{"title":"Vectors","level":"1.3.2","depth":2,"path":"vectors.md","ref":"vectors.md","articles":[]},"previous":{"title":"Data Types","level":"1.3","depth":1,"path":"datatypes.md","ref":"datatypes.md","articles":[{"title":"Characters","level":"1.3.1","depth":2,"path":"characters.md","ref":"characters.md","articles":[]},{"title":"Vectors","level":"1.3.2","depth":2,"path":"vectors.md","ref":"vectors.md","articles":[]},{"title":"Matrices","level":"1.3.3","depth":2,"path":"matrices.md","ref":"matrices.md","articles":[]},{"title":"Data frames","level":"1.3.4","depth":2,"path":"dataframes.md","ref":"dataframes.md","articles":[]},{"title":"Lists","level":"1.3.5","depth":2,"path":"lists.md","ref":"lists.md","articles":[]},{"title":"Exercises","level":"1.3.6","depth":2,"path":"exo1.md","ref":"exo1.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"characters.md","mtime":"2019-06-12T15:10:04.636Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

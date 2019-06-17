@@ -554,6 +554,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="solutions.html">
+            
+                <a href="solutions.html">
+            
+                    
+                    Solutions
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -606,16 +619,18 @@
 }
 </code></pre><p>You already saw in the previous paragraphs how to create &apos;condition&apos;. You use relational and logical operators!</p>
 <p>If my sample is of type B-cell, retrieve expression of CD19. Translating this statement into a code is super easy:</p>
-<p><strong>Important: In the code below, you define an a-priori knowledge. YOU know that the marker of B-cell is CD19 and that the marker of T-cell is CD4. If you wonder how to use a program to retrieve all markers of all cell-types, that something more complicated. You need to learn more about data structures and functions (and packages). Be patient, you will come to it. In this introductory, we aim at using simple and small examples. We will do a &apos;big&apos; program with real data at the end of the workshop.</strong></p>
+<p>**Important: In the code below, you define an a-priori knowledge. YOU know that the marker of B-cell is CD19 and that the marker of T-cell is CD4. If you wonder how to use a program to retrieve all markers of all cell-types, that something more complicated. You need to learn more about data structures and functions (and packages). Be patient, you will come to it. In this introductory class, we aim at using simple and small examples.</p>
 <pre><code>&gt; ## Create the variables containing genes expression and cell type
 &gt; expression_values &lt;- c(100, 200)
 &gt; names(expression_values) &lt;- c(&quot;CD19&quot;, &quot;CD4&quot;)
 &gt; current_sample &lt;- &quot;B-cell&quot;
-&gt; ## Now retrieve CD19 expression only if the current sample is B-cell
-&gt; if(current_sample == &quot;B-cell&quot;){
-+     print(expression_values[[&quot;CD19&quot;]])
-+ }
-</code></pre><p>BAM! You just made one of the major steps, you start thinking like a programmer, congrats!</p>
+</code></pre><p><br>
+<strong>Exercise 10:</strong></p>
+<ul>
+<li>Using the structure at the begining of the page, write a code that retrieve CD19 expression only if the current sample is B-cell. (TIP: use the function &apos;print(...)&apos; replacing &apos;...&apos; by the &quot;CD19&quot; value of &quot;expression_values&quot;).</li>
+</ul>
+<p><br></p>
+<p>BAM! You just made one of the major steps, you start thinking like a programmer, congrats!</p>
 
                                 
                                 </section>
@@ -659,7 +674,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"if","level":"1.5.1","depth":2,"next":{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},"previous":{"title":"Control structures","level":"1.5","depth":1,"path":"controlstructures.md","ref":"controlstructures.md","articles":[{"title":"if","level":"1.5.1","depth":2,"path":"if.md","ref":"if.md","articles":[]},{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},{"title":"for loop","level":"1.5.3","depth":2,"path":"forloop.md","ref":"forloop.md","articles":[]},{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"if.md","mtime":"2019-06-11T14:03:35.753Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T15:11:18.653Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"if","level":"1.5.1","depth":2,"next":{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},"previous":{"title":"Control structures","level":"1.5","depth":1,"path":"controlstructures.md","ref":"controlstructures.md","articles":[{"title":"if","level":"1.5.1","depth":2,"path":"if.md","ref":"if.md","articles":[]},{"title":"if-else","level":"1.5.2","depth":2,"path":"ifelse.md","ref":"ifelse.md","articles":[]},{"title":"for loop","level":"1.5.3","depth":2,"path":"forloop.md","ref":"forloop.md","articles":[]},{"title":"while loop","level":"1.5.4","depth":2,"path":"whileloop.md","ref":"whileloop.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"if.md","mtime":"2019-06-17T12:12:27.965Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T13:32:55.312Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
