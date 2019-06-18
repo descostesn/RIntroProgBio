@@ -21,3 +21,4 @@ nicolas.descostes@embl.it
 
 <a href="https://twitter.com/NDescostes?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @NDescostes</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+This lesson is made available under the **[MIT License](https://opensource.org/licenses/MIT)**. Feel free to use, copy, modify, merge, publish, distribute, sublicense. If you do so, I will be happy to know, drop me an email.
