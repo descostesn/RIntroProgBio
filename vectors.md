@@ -25,12 +25,6 @@ Maybe you would like to control what is inside your vector:
 > LETTERS
 > ## Now subselect the first four letters
 > LETTERS[1:4]
-```
-
-BAM! You just have used a R function with subsetting the vector! We will talk about R functions later in this course. Let's go back to simple operations:
-
-
-```
 > ## Generate vectors with combine
 > c(1,2,3)
 > c("A", "B", "C")
