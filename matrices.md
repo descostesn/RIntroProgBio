@@ -20,6 +20,8 @@ Below is how to create matrices:
 > mat
 ```
 
+**Remark:** 'matrix' is the second function that we see. 'data', 'nrow' and 'ncol' are called the **parameters** of the function.
+
 <br><br>
 
 **Exercise 5**:
