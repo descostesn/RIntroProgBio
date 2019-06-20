@@ -29,6 +29,9 @@ Maybe you would like to control what is inside your vector:
 > c(1,2,3)
 > c("A", "B", "C")
 ```
+
+**Question**: What would happen if you mix numbers and characters when creating a vector?
+
 <br><br>
 ** Exercise 4:**
 
@@ -52,3 +55,5 @@ Finally, let' see how to combine numbers and characters:
 ```
 
 **Question**: What would happen if you give more names than values?
+
+'names()' is a function. This is the first one that we see!
