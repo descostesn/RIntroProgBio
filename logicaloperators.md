@@ -36,10 +36,10 @@ Keep in mind the following rules when coding:
   + Predict and test the following expressions: "!FALSE"; "!FALSE || FALSE"
   + Predict and test the following expression: (TRUE || FALSE) && (TRUE && FALSE)
   + Define two variables x and y with the values 5 and 6. Can you guess the result of (x > 5 && y > 5) || (x == y) ?
-  + Define the following variables: mutation1 <- "Tyr1", mutation2 <- "Ser5", cellType1 <- "yeast", cellType2  <- "mammals". Code and verify the following statement:
+  + Define the following variables: mutation1 <- "Tyr1", mutation2 <- "Ser5", organism1 <- "yeast", organism2  <- "mammals". Code and verify the following statement:
       * mutation1 EQUAL "Ser5"
-      * cellType2 DIFFERENT THAN "mammals"
-      * mutation2 EQUAL "Ser5" AND cellType2 EQUAL "mammals"      
+      * organism2 DIFFERENT THAN "mammals"
+      * mutation2 EQUAL "Ser5" AND organism2 EQUAL "mammals"      
 
 <br><br>
 
