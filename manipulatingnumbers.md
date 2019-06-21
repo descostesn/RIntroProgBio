@@ -8,27 +8,13 @@ Different operations can be performed on numbers such as rounding (**abs**, **ce
 > ## Retrieve the absolute value of x
 > x <- -2.849
 > abs(x)
-> ## Round number to upper or lower integer
-> x <- 2.849
-> ceiling(x)
-> floor(x)
-> ## Round including digits
-> round(x, digits=1)
-> ## Compute natural, base 2 and base 10 logarithms
-> x <- 5
-> log(x)
-> log2(x)
-> log10(x)
-> ## Find the square root of 9
-> x <- 9
-> sqrt(x)
 ```
 
 ** Exercise 12**: Using the functions indicated in bold in the previous paragraph, try to:
 
   + Round number to upper or lower integer with 'ceiling(x)' and 'floor(x)' of  x <- 2.849
   + Round including one digit. Look at the documentation of 'round' with '?round'
-  + Compute natural, base 2 and base 10 logarithms of x <- 5
+  + Compute natural, base 2 and base 10 logarithms of x <- 5. Use log, log2 and log10
   + Find the square root of  x <- 9
 
 On vectors:
