@@ -157,11 +157,11 @@ y <- 6
 
 mutation1 <- "Tyr1"
 mutation2 <- "Ser5"
-cellType1 <- "yeast"
-cellType2  <- "mammals"
+organism1 <- "yeast"
+organism2  <- "mammals"
 mutation1 == "Ser5"
-cellType2 != "mammals"
-mutation2 == "Ser5" && cellType2 == "mammals"
+organism2 != "mammals"
+mutation2 == "Ser5" && organism2 == "mammals"
 ```
 
 # Exercise 10:
