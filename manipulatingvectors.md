@@ -67,7 +67,7 @@ R represents missing values by NA (**N**ot **A**vailable). You will very often f
 ```
 
 <br>
-**Exercise 15:**
+**Exercise 16:**
 
   + Remove duplicated values from vec5 and display it in reverted order
   + Add vec6 to list_vec
@@ -84,15 +84,9 @@ Very often it is necessary to find the elements of a vector satisfying a particu
 ```
 
 <br>
-**Exercise 16:**
+**Exercise 17:**
 
   + Find the elements of vec4 that are higher than 3 and lower than 5
   + Find the index of the minimum and maximum of vec4 with *which.min* and *which.max*.
 
-> ## Find the elements of vec4 that are higher than 3 and lower than 5
-> which(vec4 > 3 & vec4 < 5)
->
-> ## Find the index of the minimum and maximum of vec4
-> which.min(vec4)
-> which.max(vec4)
-```
+
