@@ -443,9 +443,7 @@ list_conv <- as.list(mat)
 is(list_conv)
 ```
 
-
-
-# Exercise 19:
+# Exercise 22:
 
 ```
 ## Create two numeric vectors
@@ -458,3 +456,136 @@ mapply(function(x,y) return(x+y), vec1, vec2)
 ## A more clever solution is to use vectorisation
 vec1 + vec2
 ```
+
+<br>
+
+# Exercise 23:
+
+```
+## Create an empty file 'test_1.txt' with *file.create*.
+file.create("test_1.txt")
+
+## Verify if 'test_1.txt' and 'test_2.txt' exist with *file.exists*
+file.exists("test_1.txt")
+file.exists("test_2.txt")
+
+## Remove 'test_1.txt' with *file.remove*
+file.remove("test_1.txt")
+
+## Create again 'test_1.txt'
+file.create("test_1.txt")
+
+## Copy 'test_1.txt' to the destination file 'test_2.txt' with	*file.copy*
+file.copy("test_1.txt", "test_2.txt")
+
+## Rename 'test_2.txt' to 'test_3.txt' with *file.rename*
+file.rename("test_2.txt", "test_3.txt")
+
+## Retrieve the directory path of "/home/my_name/Documents/myfile.txt" with *dirname*
+mock_example <- "/home/my_name/Documents/myfile.txt"
+dirname(mock_example)
+
+## Retrieve the above file name with *basename*
+basename(mock_example)
+
+## Go up one folder with *setwd("..")*
+setwd("..")
+
+## List the files of the directory 'training_files_manipulation' with *list.files*
+list.files("./training_files_manipulation")
+list.files("./training_files_manipulation", full.names = TRUE)
+
+##  Delete the 'training_files_manipulation' directory with *unlink*
+unlink("./training_files_manipulation", recursive = TRUE)
+```
+
+# Exercise 24:
+
+```
+## Write *DEgenes* to a csv file (DEgenes.csv) with *write.csv*
+write.csv(DEgenes, file="DEgenes.csv")
+
+## Read *DEgenes.txt* with *read.table*. Look at the options sep, header and row.names in ?read.table.
+fi_txt <- read.table("DEgenes.txt", sep="\t", header = TRUE, row.names = 1,
+ stringsAsFactors = FALSE)
+fi_txt
+
+## Read the 'DEgenes.csv' file	with *read.csv*
+fi_csv <- read.csv("DEgenes.csv", header = TRUE, row.names = 1)
+fi_csv
+
+## Read the lines of 'DEgenes.txt' with *readLines*
+fi_lines <- readLines("DEgenes.txt")
+fi_lines
+
+## Delete the files 'DEgenes.txt' and 'DEgenes.csv' in	one command with file.remove (create a vector with the file names)
+file.remove(c("DEgenes.txt", "DEgenes.csv"))
+```
+
+# Exercise 25:
+
+```
+## List all variables present in the current session with *ls()*
+ls()
+
+## Save a variable test <- c(1,2,3) with *save*. Look at the options *?save*
+test <- c(1,2,3)
+save(test, file="test.Rdat")
+
+## Load the saved variable into the environment with *load*
+load("test.Rdat")
+
+## Delete the variable	with *rm*
+rm(test)
+
+## Free the unused memory with	*gc()* (garbage collector)
+gc()
+```
+
+
+# Exercise 26:
+
+```
+## Load the package BiocManager with *library*
+library("BiocManager")
+
+## Install the Bioconductor package "DESeq2" and "edgeR" with *install*
+install("DESeq2")
+install("edgeR")
+
+## Remove the package edgeR with *remove.packages*
+remove.packages("edgeR")
+
+## Check your R version with *R.Version()*
+R.Version()
+
+## Check 'DESeq2' package version with	*packageVersion*
+packageVersion("DESeq2")
+
+## Check where the packages were installed with '.libPaths()'
+.libPaths()
+```
+
+# Exercise 27:
+
+```
+## Start the R documentation page with	*help.start()*
+help.start()
+
+## Get help on the function DESeqDataSetFromMatrix with *?* or	*help*
+?DESeqDataSetFromMatrix
+help("DESeqDataSetFromMatrix")
+
+## Visualize an example using DESeqDataSetFromMatrix with *example*
+example("DESeqDataSetFromMatrix")
+
+## Find all functions using the string 'write'	with *apropos*
+apropos("write")
+
+## See all available vignette
+vignette()
+
+## Check the DESeq2 vignette with *vignette*
+vignette("DESeq2")
+```
+
