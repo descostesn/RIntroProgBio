@@ -615,31 +615,21 @@
                                 <h1 id="manipulating-characters">Manipulating Characters</h1>
 <p>Many functions enable to manipulate characters. Here only a few are presented. To illustrate their utility, DNA sequences will be manipulated.</p>
 <pre><code>&gt; simpleDNASeq &lt;- &quot;AACATGACAGTTAGGACAGATACAATAATATATACAGAGACAGACAGACAGATTATATAC&quot;
+&gt;
 &gt; ## Separate the characters wih the function strsplit
 &gt; simpleDNASeq_vec &lt;- unlist(strsplit(simpleDNASeq,&quot;&quot;))
-&gt;
-&gt; ## Find the indexes of &apos;A&apos;
-&gt; grep(&quot;A&quot;, simpleDNASeq_vec)
-&gt; ## Is A present at a particular location
-&gt; grepl(&quot;A&quot;, simpleDNASeq_vec)
-&gt;
-&gt;## Find a submotif in the sequence
-&gt; gregexpr(&quot;AA&quot;, simpleDNASeq)
-&gt;
-&gt; ## Replace the first occurrence of &quot;A&quot; by &quot;C&quot;
-&gt; sub(&quot;A&quot;, &quot;C&quot;, simpleDNASeq)
-&gt; ## Replace all occurrences of &quot;A&quot; by &quot;C&quot;
-&gt; gsub(&quot;A&quot;, &quot;C&quot;, simpleDNASeq)
-&gt;
-&gt; ## Extract nucleotides from position 4 to 8
-&gt; substr(simpleDNASeq,4,8)
-&gt;
-&gt; ## Concatenate two sequences
-&gt; paste(&quot;AA&quot;, &quot;CT&quot;, sep=&quot;&quot;)
-&gt; paste(&quot;AA&quot;, &quot;CT&quot;, sep=&quot;;&quot;)
-&gt; ## paste0 avoids using the empty separator
-&gt; paste0(&quot;AA&quot;, &quot;CT&quot;)
-</code></pre>
+</code></pre><p><strong>Exercise 14:</strong></p>
+<p>Using the simpleDNASeq    character string:</p>
+<ul>
+<li>Find the indexes of &apos;A&apos; with <em>grep</em>.</li>
+<li>Try the same command with <em>grepl</em> and see what it does.</li>
+<li>Find a submotif &apos;AA&apos; with the <em>gregexpr</em> command.</li>
+<li>Replace the first occurrence of &quot;A&quot; by &quot;C&quot; with <em>sub</em>.</li>
+<li>Replace all occurrences of &quot;A&quot; by &quot;C&quot; with <em>gsub</em>.</li>
+<li>Extract nucleotides from position 4 to 8 with <em>substr</em>.</li>
+<li>Concatenate two sequences with <em>paste</em>. Look at <em>?paste0</em> and replace the previous command with it.</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -682,7 +672,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Manipulating characters","level":"1.6.2","depth":2,"next":{"title":"Manipulating vectors","level":"1.6.3","depth":2,"path":"manipulatingvectors.md","ref":"manipulatingvectors.md","articles":[]},"previous":{"title":"Manipulating numbers","level":"1.6.1","depth":2,"path":"manipulatingnumbers.md","ref":"manipulatingnumbers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingcharacters.md","mtime":"2019-06-11T14:13:07.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T14:35:28.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manipulating characters","level":"1.6.2","depth":2,"next":{"title":"Manipulating vectors","level":"1.6.3","depth":2,"path":"manipulatingvectors.md","ref":"manipulatingvectors.md","articles":[]},"previous":{"title":"Manipulating numbers","level":"1.6.1","depth":2,"path":"manipulatingnumbers.md","ref":"manipulatingnumbers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingcharacters.md","mtime":"2019-07-23T17:21:44.410Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T18:59:36.304Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

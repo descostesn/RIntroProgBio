@@ -620,28 +620,25 @@
 &gt; vec4 &lt;- c(2,4,5,5,4,1)
 &gt; vec5 &lt;- c(&quot;A&quot;, &quot;A&quot;, &quot;C&quot;, &quot;T&quot;, &quot;G&quot;, &quot;T&quot;)
 &gt;
-&gt; ## Verify if all the values of vec2 are higher than the values of vec1
-&gt; vec2 &gt; vec1
-&gt; all(vec2 &gt; vec1)
-&gt;
-&gt; ## Verify if all the values of vec3 are equal to the values of vec1
-&gt; vec1 == vec3
-&gt; all.equal(vec1, vec3)
-&gt; isTRUE(all.equal(vec1, vec3))
-&gt; all.equal(vec1, vec1)
-&gt;
 &gt; ## Get the number of elements of a vector (or a list)
 &gt; length(vec2)
 </code></pre><p><br></p>
-<p><strong>Exercise 14:</strong></p>
+<p><strong>Exercise 15:</strong></p>
 <ul>
+<li>Verify if all the values of vec2 are higher than the values of vec1 with <em>all</em>.</li>
+<li>Verify if all the values of vec3 are equal to the values of vec1 with <em>all.equal</em>.</li>
+<li>Verify if any of the value of vec3 is higher than the values of vec1 with <em>any</em>.</li>
+<li>Find the duplicated values of vec4 with <em>duplicated</em>.</li>
+<li>Find if any of the values of vec4 or vec5 are duplicated with <em>anyDuplicated</em>.</li>
+<li>Remove duplicated values from vec4 and vec5 with <em>unique</em>.</li>
+<li>Make the elements of vec5 unique with <em>make.unique</em>.</li>
 <li>Create a list &apos;list_vec&apos; with the vectors vec1 to vec4</li>
 <li>Use a for loop to print each vector</li>
 <li>Modify the for loop to print from vec2 to vec4 (omitting vec1)</li>
 <li>Do a 2 by 2 comparison of the equality of the vectors using a double for loop</li>
 </ul>
 <p><br>
-<strong>TIP</strong>: If you want to compare two values, use also the isTRUE(all.equal()) form. The reason is that the way R stores floating values in memory can be tricky. Test the code below:
+<strong>TIP</strong>: If you want to compare two values, use also the isTRUE(all.equal()) form. The reason is that the way R stores floating values in memory can be tricky. Test the code below and identify what is wrong:
 <br></p>
 <pre><code>&gt; x = seq(0,1,by=0.2)
 &gt; y = c(0.0, 0.2, 0.4, 0.6, 0.8, 1.0)
@@ -655,22 +652,6 @@
 &gt;
 &gt; x[4] == y[4]
 &gt; all.equal(x[4],y[4])
-</code></pre><p>Going back to our vectors:</p>
-<pre><code>&gt; ## Are Some Values TRUE
-&gt; vec3 &gt; vec1
-&gt; any(vec3 &gt; vec1)
-&gt;
-&gt; ## Are some values duplicated
-&gt; duplicated(vec4)
-&gt; anyDuplicated(vec4)
-&gt; anyDuplicated(vec5)
-&gt;
-&gt; ## Remove duplicated values
-&gt; unique(vec4)
-&gt; unique(vec5)
-&gt;
-&gt;## Make the element of a vector unique
-&gt; make.unique(vec5)
 </code></pre><p>R represents missing values by NA (<strong>N</strong>ot <strong>A</strong>vailable). You will very often find NA values when reading public data or your own table. The reasons for having missing values can be multiple: Lack of experimental data, error in reading functions, etc. A lot of functions in R have a parameter to handle missing values, usually it is denoted by &apos;na.rm&apos; (rm = remove). Two important functions for handling NA values are <strong>is.na</strong> and <strong>anyNA</strong>:</p>
 <pre><code>&gt; x &lt;- NA
 &gt; y &lt;- 10
@@ -682,7 +663,7 @@
 &gt; is.na(vec6)
 &gt; anyNA(vec6)
 </code></pre><p><br>
-<strong>Exercise 15:</strong></p>
+<strong>Exercise 16:</strong></p>
 <ul>
 <li>Remove duplicated values from vec5 and display it in reverted order</li>
 <li>Add vec6 to list_vec</li>
@@ -692,13 +673,13 @@
 <p>Very often it is necessary to find the elements of a vector satisfying a particular condition. The function which is very useful to achieve such goal is <strong>which</strong>:</p>
 <pre><code>&gt; ## Find the elements of vec4 that are higher than 3
 &gt; which(vec4 &gt; 3)
-&gt; ## Find the elements of vec4 that are higher than 3 and lower than 5
-&gt; which(vec4 &gt; 3 &amp; vec4 &lt; 5)
-&gt;
-&gt; ## Find the index of the minimum and maximum of vec4
-&gt; which.min(vec4)
-&gt; which.max(vec4)
-</code></pre>
+</code></pre><p><br>
+<strong>Exercise 17:</strong></p>
+<ul>
+<li>Find the elements of vec4 that are higher than 3 and lower than 5</li>
+<li>Find the index of the minimum and maximum of vec4 with <em>which.min</em> and <em>which.max</em>.</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -741,7 +722,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Manipulating vectors","level":"1.6.3","depth":2,"next":{"title":"Manipulating intervals","level":"1.6.4","depth":2,"path":"manipulatingintervals.md","ref":"manipulatingintervals.md","articles":[]},"previous":{"title":"Manipulating characters","level":"1.6.2","depth":2,"path":"manipulatingcharacters.md","ref":"manipulatingcharacters.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingvectors.md","mtime":"2019-06-17T14:20:16.596Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T14:35:28.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manipulating vectors","level":"1.6.3","depth":2,"next":{"title":"Manipulating intervals","level":"1.6.4","depth":2,"path":"manipulatingintervals.md","ref":"manipulatingintervals.md","articles":[]},"previous":{"title":"Manipulating characters","level":"1.6.2","depth":2,"path":"manipulatingcharacters.md","ref":"manipulatingcharacters.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingvectors.md","mtime":"2019-07-23T17:49:18.073Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T18:59:36.304Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -820,9 +820,60 @@ mean(vector_10)
 
 ## Summarize all values (min, max, etc)
 summary(randomvec1)
-</code></pre><p>TO COMPLETE</p>
-<h1 id="exercise-15">Exercise 15:</h1>
-<pre><code>## Create a list &apos;list_vec&apos; with the vectors vec1 to vec4
+</code></pre><h1 id="exercise-14">Exercise 14:</h1>
+<pre><code>## Find the indexes of &apos;A&apos; with *grep*
+grep(&quot;A&quot;, simpleDNASeq_vec)
+
+## Try the same command with *grepl* and see what it does
+## The command answers: Is A present at a particular location
+ grepl(&quot;A&quot;, simpleDNASeq_vec)
+
+## Find a submotif &apos;AA&apos; with the *gregexpr* command
+gregexpr(&quot;AA&quot;, simpleDNASeq)
+
+## Replace the first occurrence of &quot;A&quot; by &quot;C&quot; with sub
+sub(&quot;A&quot;, &quot;C&quot;, simpleDNASeq)
+
+## Replace all occurrences of &quot;A&quot; by &quot;C&quot; with gsub
+gsub(&quot;A&quot;, &quot;C&quot;, simpleDNASeq)
+
+## Extract nucleotides from position 4 to 8 with substr
+substr(simpleDNASeq,4,8)
+
+## Concatenate two sequences with paste and paste0
+paste(&quot;AA&quot;, &quot;CT&quot;, sep=&quot;&quot;)
+paste(&quot;AA&quot;, &quot;CT&quot;, sep=&quot;;&quot;)
+paste0(&quot;AA&quot;, &quot;CT&quot;)
+</code></pre><h1 id="exercise-15">Exercise 15:</h1>
+<pre><code>##  Verify if all the values of vec2 are higher than the values of vec1    with *all*
+vec2 &gt; vec1
+all(vec2 &gt; vec1)
+
+## Verify if all the values of vec3 are equal to the values of vec1 with *all.equal*
+vec1 == vec3
+all.equal(vec1, vec3)
+isTRUE(all.equal(vec1, vec3))
+all.equal(vec1, vec1)
+
+## Verify if any of the value of vec3 is higher than the values of vec1 with *any*
+vec3 &gt; vec1
+any(vec3 &gt; vec1)
+
+## Find the duplicated    values of vec4 with *duplicated*
+duplicated(vec4)
+
+## Find if any    of the values of vec4 or vec5 are duplicated with *anyDuplicated*
+anyDuplicated(vec4)
+anyDuplicated(vec5)
+
+## Remove duplicated values from vec4 and vec5    with *unique*
+unique(vec4)
+unique(vec5)
+
+## Make the elements of vec5 unique with *make.unique*
+make.unique(vec5)
+
+## Create a list &apos;list_vec&apos; with the vectors vec1 to vec4
 vec1 &lt;- c(1,2,3,4)
 vec2 &lt;- c(2,3,4,5)
 vec3 &lt;- c(1,2,5,6)
@@ -855,6 +906,22 @@ for(i in seq_len(length(list_vec)))
  if(anyNA(list_vec[[i]]))
  print(list_vec[i])
 </code></pre><h1 id="exercise-17">Exercise 17:</h1>
+<pre><code>## Find the elements of vec4 that are higher than 3 and lower than 5
+which(vec4 &gt; 3 &amp; vec4 &lt; 5)
+
+## Find the index of the minimum and maximum of vec4 with *which.min* and *which.max*
+which.min(vec4)
+which.max(vec4)
+</code></pre><h1 id="exercise-18">Exercise 18:</h1>
+<pre><code>## Create a vector vec3 &lt;- c(&quot;Nanog&quot;, &quot;CD19&quot;, &quot;Oct4&quot;)
+vec3 &lt;- c(&quot;Nanog&quot;, &quot;CD19&quot;, &quot;Oct4&quot;)
+
+## Perform the    intersection of    vec1 and vec3 with *intersect*
+intersect(vec1, vec3)
+
+## Peform union on vectors
+union(vec1, vec3)
+</code></pre><h1 id="exercise-19">Exercise 19:</h1>
 <pre><code>## Define the names of rows and columns
 rownames(matrix1) &lt;- c(&quot;gene1&quot;,&quot;gene2&quot;, &quot;gene3&quot;, &quot;gene4&quot;)
 colnames(matrix1) &lt;- c(&quot;condition1&quot;, &quot;condition2&quot;, &quot;condition3&quot;)
@@ -874,13 +941,32 @@ rownames(matrix1)
 
 ## print the col names
 colnames(matrix1)
-</code></pre><h1 id="exercise-18">Exercise 18:</h1>
+</code></pre><h1 id="exercise-20">Exercise 20:</h1>
 <pre><code>## Combine matrix 1 and 2 by row
 rbind(matrix1, matrix2)
 
 ## Combine matrix 1 and 2 by column
 cbind(matrix1, matrix2)
-</code></pre><h1 id="exercise-19">Exercise 19:</h1>
+</code></pre><h1 id="exercise-21">Exercise 21:</h1>
+<pre><code>## Convert *numvec_conv* to characters    with *as.character*
+charvec_conv &lt;- as.character(numvec_conv)
+is(charvec)
+
+## Convert *numvec_conv* to a factor with *as.factor*
+as.factor(numvec)
+
+## Convert *mat* to a dataframe with *as.data.frame*
+df_conv &lt;- as.data.frame(mat)
+is(df_conv)
+
+## Convert the    result back to a matrix
+mat_conv &lt;- as.matrix(df_conv)
+is(mat_conv)
+
+## Convert *mat* to a list
+list_conv &lt;- as.list(mat)
+is(list_conv)
+</code></pre><h1 id="exercise-22">Exercise 22:</h1>
 <pre><code>## Create two numeric vectors
 vec1 &lt;- c(1,2,3,4)
 vec2 &lt;- c(5,6,7,8)
@@ -890,6 +976,116 @@ mapply(function(x,y) return(x+y), vec1, vec2)
 
 ## A more clever solution is to use vectorisation
 vec1 + vec2
+</code></pre><p><br></p>
+<h1 id="exercise-23">Exercise 23:</h1>
+<pre><code>## Create an empty file &apos;test_1.txt&apos; with *file.create*.
+file.create(&quot;test_1.txt&quot;)
+
+## Verify if &apos;test_1.txt&apos; and &apos;test_2.txt&apos; exist with *file.exists*
+file.exists(&quot;test_1.txt&quot;)
+file.exists(&quot;test_2.txt&quot;)
+
+## Remove &apos;test_1.txt&apos; with *file.remove*
+file.remove(&quot;test_1.txt&quot;)
+
+## Create again &apos;test_1.txt&apos;
+file.create(&quot;test_1.txt&quot;)
+
+## Copy &apos;test_1.txt&apos; to the destination file &apos;test_2.txt&apos; with    *file.copy*
+file.copy(&quot;test_1.txt&quot;, &quot;test_2.txt&quot;)
+
+## Rename &apos;test_2.txt&apos; to &apos;test_3.txt&apos; with *file.rename*
+file.rename(&quot;test_2.txt&quot;, &quot;test_3.txt&quot;)
+
+## Retrieve the directory path of &quot;/home/my_name/Documents/myfile.txt&quot; with *dirname*
+mock_example &lt;- &quot;/home/my_name/Documents/myfile.txt&quot;
+dirname(mock_example)
+
+## Retrieve the above file name with *basename*
+basename(mock_example)
+
+## Go up one folder with *setwd(&quot;..&quot;)*
+setwd(&quot;..&quot;)
+
+## List the files of the directory &apos;training_files_manipulation&apos; with *list.files*
+list.files(&quot;./training_files_manipulation&quot;)
+list.files(&quot;./training_files_manipulation&quot;, full.names = TRUE)
+
+##  Delete the &apos;training_files_manipulation&apos; directory with *unlink*
+unlink(&quot;./training_files_manipulation&quot;, recursive = TRUE)
+</code></pre><h1 id="exercise-24">Exercise 24:</h1>
+<pre><code>## Write *DEgenes* to a csv file (DEgenes.csv) with *write.csv*
+write.csv(DEgenes, file=&quot;DEgenes.csv&quot;)
+
+## Read *DEgenes.txt* with *read.table*. Look at the options sep, header and row.names in ?read.table.
+fi_txt &lt;- read.table(&quot;DEgenes.txt&quot;, sep=&quot;\t&quot;, header = TRUE, row.names = 1,
+ stringsAsFactors = FALSE)
+fi_txt
+
+## Read the &apos;DEgenes.csv&apos; file    with *read.csv*
+fi_csv &lt;- read.csv(&quot;DEgenes.csv&quot;, header = TRUE, row.names = 1)
+fi_csv
+
+## Read the lines of &apos;DEgenes.txt&apos; with *readLines*
+fi_lines &lt;- readLines(&quot;DEgenes.txt&quot;)
+fi_lines
+
+## Delete the files &apos;DEgenes.txt&apos; and &apos;DEgenes.csv&apos; in    one command with file.remove (create a vector with the file names)
+file.remove(c(&quot;DEgenes.txt&quot;, &quot;DEgenes.csv&quot;))
+</code></pre><h1 id="exercise-25">Exercise 25:</h1>
+<pre><code>## List all variables present in the current session with *ls()*
+ls()
+
+## Save a variable test &lt;- c(1,2,3) with *save*. Look at the options *?save*
+test &lt;- c(1,2,3)
+save(test, file=&quot;test.Rdat&quot;)
+
+## Load the saved variable into the environment with *load*
+load(&quot;test.Rdat&quot;)
+
+## Delete the variable    with *rm*
+rm(test)
+
+## Free the unused memory with    *gc()* (garbage collector)
+gc()
+</code></pre><h1 id="exercise-26">Exercise 26:</h1>
+<pre><code>## Load the package BiocManager with *library*
+library(&quot;BiocManager&quot;)
+
+## Install the Bioconductor package &quot;DESeq2&quot; and &quot;edgeR&quot; with *install*
+install(&quot;DESeq2&quot;)
+install(&quot;edgeR&quot;)
+
+## Remove the package edgeR with *remove.packages*
+remove.packages(&quot;edgeR&quot;)
+
+## Check your R version with *R.Version()*
+R.Version()
+
+## Check &apos;DESeq2&apos; package version with    *packageVersion*
+packageVersion(&quot;DESeq2&quot;)
+
+## Check where the packages were installed with &apos;.libPaths()&apos;
+.libPaths()
+</code></pre><h1 id="exercise-27">Exercise 27:</h1>
+<pre><code>## Start the R documentation page with    *help.start()*
+help.start()
+
+## Get help on the function DESeqDataSetFromMatrix with *?* or    *help*
+?DESeqDataSetFromMatrix
+help(&quot;DESeqDataSetFromMatrix&quot;)
+
+## Visualize an example using DESeqDataSetFromMatrix with *example*
+example(&quot;DESeqDataSetFromMatrix&quot;)
+
+## Find all functions using the string &apos;write&apos;    with *apropos*
+apropos(&quot;write&quot;)
+
+## See all available vignette
+vignette()
+
+## Check the DESeq2 vignette with *vignette*
+vignette(&quot;DESeq2&quot;)
 </code></pre>
                                 
                                 </section>
@@ -929,7 +1125,7 @@ vec1 + vec2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Solutions","level":"1.7","depth":1,"previous":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"path":"interactingwiththeenvironmnet.md","ref":"interactingwiththeenvironmnet.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solutions.md","mtime":"2019-07-23T14:33:20.966Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T14:35:28.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Solutions","level":"1.7","depth":1,"previous":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"path":"interactingwiththeenvironmnet.md","ref":"interactingwiththeenvironmnet.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"solutions.md","mtime":"2019-07-23T18:57:50.902Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T18:59:36.304Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

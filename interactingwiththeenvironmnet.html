@@ -621,70 +621,46 @@
 &gt; ## Set the working directory
 &gt; dir.create(&quot;folder_to_enter_in&quot;)
 &gt; setwd(&quot;./folder_to_enter_in&quot;)
-&gt;
-&gt; ## List all variables present in the current session
-&gt; ls()
-&gt;
-&gt; ## Save a variable
-&gt; test &lt;- c(1,2,3)
-&gt; save(test, file=&quot;test.Rdat&quot;)
-&gt; ## load a variable
-&gt; load(&quot;test.Rdat&quot;)
-&gt;
-&gt; ## Delete a variable
-&gt; rm(test)
-&gt; ## Free unused memory
-&gt; gc()
-</code></pre><p>The power of R stands in the fact that it benefits from a huge community of users. Users make packages available to the community. I mentioned in session 1 two repositories which are <a href="https://cran.r-project.org/web/packages/available_packages_by_date.html" target="_blank">CRAN</a> and <a href="https://www.bioconductor.org/packages/release/BiocViews.html#___Software" target="_blank">Bioconductor</a>. To install a package from CRAN or Bioconductor, you will do it from the R console (other ways to install packages are not covered here). For CRAN, you will use the function <strong>install.packages</strong> and for Bioconductor, you will use the package <a href="https://cran.r-project.org/web/packages/BiocManager/index.html" target="_blank">BiocManager</a>. A package can be uninstalled with <strong>remove.packages</strong>. Finally, a package is loaded in R with the function <strong>library</strong>.</p>
+</code></pre><p><strong>Exercise 25:</strong></p>
+<ul>
+<li>List all variables present in the current session with <em>ls()</em></li>
+<li>Save a variable test &lt;- c(1,2,3) with <em>save</em>. Look at the options <em>?save</em>.</li>
+<li>Load the saved variable into the environment with <em>load</em>.</li>
+<li>Delete the variable with <em>rm</em>.</li>
+<li>Free the unused memory with <em>gc()</em> (garbage collector).</li>
+</ul>
+<p><br></p>
+<p>The power of R stands in the fact that it benefits from a huge community of users. Users make packages available to the community. I mentioned two repositories which are <a href="https://cran.r-project.org/web/packages/available_packages_by_date.html" target="_blank">CRAN</a> and <a href="https://www.bioconductor.org/packages/release/BiocViews.html#___Software" target="_blank">Bioconductor</a>. To install a package from CRAN or Bioconductor, you will do it from the R console (other ways to install packages are not covered here). For CRAN, you will use the function <strong>install.packages</strong> and for Bioconductor, you will use the package <a href="https://cran.r-project.org/web/packages/BiocManager/index.html" target="_blank">BiocManager</a>. A package can be uninstalled with <strong>remove.packages</strong>. Finally, a package is loaded in R with the function <strong>library</strong>.</p>
 <p>Packages are dependent on the R and/or Bioconductor version. You will see that some code that was running fine on one R version will give you some errors on others. This is because the community is active and publishes updates regularly. R gives a major release every Spring, with several patches along the year, and Bioconductor is updated every 6 months. You can check your R version with <strong>R.Version()</strong> and the version of a particular package with <strong>packageVersion</strong>. 
 It is also useful to know where packages are installed,  use <strong>.libPaths()</strong>.  </p>
 <pre><code>&gt; ## Install a package from CRAN
 &gt; install.packages(&quot;ggplot2&quot;, dependencies = TRUE)
 &gt; install.packages(&quot;BiocManager&quot;, dependencies = TRUE)
-&gt;
-&gt; ## Load the package BiocManager
-&gt; library(&quot;BiocManager&quot;)
-&gt;
-&gt; ## Install the Bioconductor package &quot;DESeq2&quot; and &quot;edgeR&quot;
-&gt; install(&quot;DESeq2&quot;)
-&gt; install(&quot;edgeR&quot;)
-&gt;
-&gt; ## Remove the package edgeR
-&gt; remove.packages(&quot;edgeR&quot;)
-&gt;
-&gt; ## Check your R version
-&gt; R.Version()
-&gt;
-&gt; ## check edgeR package version
-&gt; packageVersion(&quot;edgeR&quot;)
-&gt;
-&gt; ## Check where the packages were installed
-&gt; .libPaths()
-</code></pre><p>There are different ways to get help in R. You can check the documentation of a particular function with <strong>?myfunction</strong> or <strong>help</strong>. If you do not remember the exact name of a function, you can use <strong>apropos</strong> which will list every function containing the word that you gave as parameter. You can see an example code with the function <strong>example</strong>. You can also use a web browser to look for documentation with <strong>help.start()</strong>. The R community also provides tutorials called <strong>vignette</strong>. You can see a list of vignettes with the function <strong>vignette()</strong> and visualize a particular one with <strong>vignette(&quot;mypackagename&quot;)</strong>. You can also see all available functions of a package by using the double columns &quot;<strong>mypackage::</strong>&quot; and pressing tab.</p>
+</code></pre><p><strong>Exercise 26:</strong></p>
+<ul>
+<li>Load the package BiocManager with <em>library</em>.</li>
+<li>Install the Bioconductor package &quot;DESeq2&quot; and &quot;edgeR&quot; with <em>install</em>.</li>
+<li>Remove the package edgeR with <em>remove.packages</em>.</li>
+<li>Check your R version with <em>R.Version()</em></li>
+<li>Check &apos;DESeq2&apos; package version with <em>packageVersion</em>.</li>
+<li>Check where the packages were installed with &apos;.libPaths()&apos;.</li>
+</ul>
+<p>There are different ways to get help in R. You can check the documentation of a particular function with <strong>?myfunction</strong> or <strong>help</strong>. If you do not remember the exact name of a function, you can use <strong>apropos</strong> which will list every function containing the word that you gave as parameter. You can see an example code with the function <strong>example</strong>. You can also use a web browser to look for documentation with <strong>help.start()</strong>. The R community also provides tutorials called <strong>vignette</strong>. You can see a list of vignettes with the function <strong>vignette()</strong> and visualize a particular one with <strong>vignette(&quot;mypackagename&quot;)</strong>. You can also see all available functions of a package by using the double columns &quot;<strong>mypackage::</strong>&quot; and pressing tab.</p>
 <pre><code>&gt; ## Load the package DESeq2
 &gt; library(&quot;DESeq2&quot;)
 &gt;
 &gt; ## Check all the functions available in edgeR (using the tab command)
 &gt; DESeq2::
-&gt;
-&gt; ## Start the R documentation page
-&gt; help.start()
-&gt;
-&gt; ## Get help on the function DESeqDataSetFromMatrix
-&gt; ?DESeqDataSetFromMatrix
-&gt; help(&quot;DESeqDataSetFromMatrix&quot;)
-&gt;
-&gt; ## Visualize an example using DESeqDataSetFromMatrix
-&gt; example(&quot;DESeqDataSetFromMatrix&quot;)
-&gt;
-&gt; ## Find all functions using the string &apos;write&apos;
-&gt; apropos(&quot;write&quot;)
-&gt;
-&gt; ## See all available vignette
-&gt; vignette()
-&gt; ## Check a particular vignette
-&gt; vignette(&quot;DESeq2&quot;)
-</code></pre><p>Finally, all the commands that you entered can be retrieved with the function <strong>history</strong>. To quit R enter <strong>q()</strong>. If you enter <strong>yes</strong>, you can save your R session which is actually very nice to not have to enter again all your commands.</p>
+</code></pre><p><strong>Exercise 27:</strong></p>
+<ul>
+<li>Start the R documentation page with <em>help.start()</em>.</li>
+<li>Get help on the function DESeqDataSetFromMatrix with <em>?</em> or <em>help</em>.</li>
+<li>Visualize an example using DESeqDataSetFromMatrix with <em>example</em>.</li>
+<li>Find all functions using the string &apos;write&apos; with <em>apropos</em>.</li>
+<li>See all available vignette with <em>vignette()</em>.</li>
+<li>Check the DESeq2 vignette with <em>vignette</em>.</li>
+</ul>
+<p>Finally, all the commands that you entered can be retrieved with the function <strong>history</strong>. To quit R enter <strong>q()</strong>. If you enter <strong>yes</strong>, you can save your R session which is actually very nice to not have to enter again all your commands.</p>
 <pre><code>&gt; ## Visualize the last commands entered
 &gt; history()
 &gt; ## Visualize the 200 last commands entered
@@ -735,7 +711,7 @@ Save workspace image? [y/n/c]:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"next":{"title":"Solutions","level":"1.7","depth":1,"path":"solutions.md","ref":"solutions.md","articles":[]},"previous":{"title":"On Types","level":"1.6.9","depth":2,"path":"types.md","ref":"types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interactingwiththeenvironmnet.md","mtime":"2019-06-11T15:09:39.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T14:35:28.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Interacting with the environment","level":"1.6.10","depth":2,"next":{"title":"Solutions","level":"1.7","depth":1,"path":"solutions.md","ref":"solutions.md","articles":[]},"previous":{"title":"On Types","level":"1.6.9","depth":2,"path":"types.md","ref":"types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interactingwiththeenvironmnet.md","mtime":"2019-07-23T18:55:52.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T18:59:36.304Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

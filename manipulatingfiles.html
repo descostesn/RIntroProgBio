@@ -619,41 +619,22 @@
 &gt;
 &gt; ## Change your working environment to the just created directory
 &gt; setwd(&quot;./training_files_manipulation&quot;)
-&gt;
-&gt; ## Create an empty file
-&gt; file.create(&quot;test_1.txt&quot;)
-&gt;
-&gt; ## Verify if a file exists
-&gt; file.exists(&quot;test_1.txt&quot;)
-&gt; file.exists(&quot;test_2.txt&quot;)
-&gt;
-&gt; ## Remove a file
-&gt; file.remove(&quot;test_1.txt&quot;)
-&gt; ## Create an empty file
-&gt; file.create(&quot;test_1.txt&quot;)
-&gt;
-&gt; ## copy a file
-&gt; file.copy(&quot;test_1.txt&quot;, &quot;test_2.txt&quot;)
-&gt;
-&gt; ## Rename a file
-&gt; file.rename(&quot;test_2.txt&quot;, &quot;test_3.txt&quot;)
-&gt;
-&gt; ## Retrieve directory of file
-&gt; mock_example &lt;- &quot;/home/my_name/Documents/myfile.txt&quot;
-&gt; dirname(mock_example)
-&gt;
-&gt; ## Retrieve file name from file path
-&gt; basename(mock_example)
-&gt;
-&gt; ## Lists files into a directory
-&gt; setwd(&quot;..&quot;) ## Go up in the directory tree
-&gt; list.files(&quot;./training_files_manipulation&quot;)
-&gt; list.files(&quot;./training_files_manipulation&quot;, full.names = TRUE)
-&gt;
-&gt; ## Dete directory
-&gt; unlink(&quot;./training_files_manipulation&quot;, recursive = TRUE)
-</code></pre><p>I mostly use <strong>file.list</strong> with the option full.names = TRUE to load the paths to the files that I want to process, <strong>dir.create</strong> with the option recursive = TRUE to create output folders, and the functions <strong>dirname/basename</strong>.</p>
-<p>Important functions to always have in mind are those used to read and write files. The files can be of different formats and you need to know a couple of tricks. Below is a full example creating the content and writing it to files. The different files are then read and their content is displayed. </p>
+</code></pre><p><strong>Exercise 23</strong></p>
+<ul>
+<li>Create an empty file &apos;test_1.txt&apos; with <em>file.create</em>.</li>
+<li>Verify if &apos;test_1.txt&apos; and &apos;test_2.txt&apos; exist with <em>file.exists</em>.</li>
+<li>Remove &apos;test_1.txt&apos; with <em>file.remove</em></li>
+<li>Create again &apos;test_1.txt&apos;.</li>
+<li>Copy &apos;test_1.txt&apos; to the destination file &apos;test_2.txt&apos; with <em>file.copy</em>.</li>
+<li>Rename &apos;test_2.txt&apos; to &apos;test_3.txt&apos; with <em>file.rename</em>.</li>
+<li>Retrieve the directory path of &quot;/home/my_name/Documents/myfile.txt&quot; with <em>dirname</em>.</li>
+<li>Retrieve the above file name with <em>basename</em>.</li>
+<li>Go up one folder with <em>setwd(&quot;..&quot;)</em>.</li>
+<li>List the files of the directory &apos;training_files_manipulation&apos; with <em>list.files</em>.</li>
+<li>Delete the &apos;training_files_manipulation&apos; directory with <em>unlink</em>.</li>
+</ul>
+<p>I mostly use <strong>file.list</strong> with the option full.names = TRUE to load the paths to the files that I want to process, <strong>dir.create</strong> with the option recursive = TRUE to create output folders, and the functions <strong>dirname/basename</strong>.</p>
+<p>Important functions to always have in mind are those used to read and write files. The files can be of different formats and you need to know a couple of tricks. Below is a full example creating content and writing it to files. The different files are then read and their content is displayed. </p>
 <pre><code>&gt; ## Use the DESEQ table that we used in session 1
 &gt; DEgenes &lt;- data.frame(geneName = c(&quot;Tfcp2l1&quot;, &quot;Ulk1&quot;, &quot;Atp9a&quot;, &quot;Esrrb&quot;, 
 + &quot;Jam2&quot;, &quot;Lap3&quot;),
@@ -667,26 +648,15 @@
 &gt; ## Writing it in a tabulation separated text file (see ?write.table)
 &gt; write.table(DEgenes, file=&quot;DEgenes.txt&quot;, sep=&quot;\t&quot;, quote=FALSE, 
 row.names = TRUE, col.names = TRUE)
-&gt;
-&gt; ## Writing it in a csv file (same as before, only the function name changes)
-&gt; write.csv(DEgenes, file=&quot;DEgenes.csv&quot;)
-&gt;
-&gt; ## Reading the text file
-&gt; fi_txt &lt;- read.table(&quot;DEgenes.txt&quot;, sep=&quot;\t&quot;, header = TRUE, row.names = 1, 
-+ stringsAsFactors = FALSE)
-&gt; fi_txt
-&gt;
-&gt; ## Reading the csv file
-&gt; fi_csv &lt;- read.csv(&quot;DEgenes.csv&quot;, header = TRUE, row.names = 1)
-&gt; fi_csv
-&gt;
-&gt; ## Reading the lines of a file
-&gt; fi_lines &lt;- readLines(&quot;DEgenes.txt&quot;)
-&gt; fi_lines
-&gt;
-&gt; ## Deleting files
-&gt; file.remove(c(&quot;DEgenes.txt&quot;, &quot;DEgenes.csv&quot;))
-</code></pre>
+</code></pre><p><strong>Exercise 24</strong>:</p>
+<ul>
+<li>Write <em>DEgenes</em> to a csv file (DEgenes.csv) with <em>write.csv</em>.</li>
+<li>Read <em>DEgenes.txt</em> with <em>read.table</em>. Look at the options sep, header and row.names in ?read.table.</li>
+<li>Read the &apos;DEgenes.csv&apos; file with <em>read.csv</em>.</li>
+<li>Read the lines of &apos;DEgenes.txt&apos; with <em>readLines</em>.</li>
+<li>Delete the files &apos;DEgenes.txt&apos; and &apos;DEgenes.csv&apos; in one command with file.remove (create a vector with the file names)</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -729,7 +699,7 @@ row.names = TRUE, col.names = TRUE)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Manipulating files","level":"1.6.8","depth":2,"next":{"title":"On Types","level":"1.6.9","depth":2,"path":"types.md","ref":"types.md","articles":[]},"previous":{"title":"Apply family","level":"1.6.7","depth":2,"path":"applyfamily.md","ref":"applyfamily.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingfiles.md","mtime":"2019-06-11T15:03:58.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T14:35:28.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Manipulating files","level":"1.6.8","depth":2,"next":{"title":"On Types","level":"1.6.9","depth":2,"path":"types.md","ref":"types.md","articles":[]},"previous":{"title":"Apply family","level":"1.6.7","depth":2,"path":"applyfamily.md","ref":"applyfamily.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"manipulatingfiles.md","mtime":"2019-07-23T18:37:11.630Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T18:59:36.304Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
