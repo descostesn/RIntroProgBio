@@ -14,23 +14,19 @@ A very important feature of R is that it **loads your data to the live memory of
 > ## Set the working directory
 > dir.create("folder_to_enter_in")
 > setwd("./folder_to_enter_in")
->
-> ## List all variables present in the current session
-> ls()
->
-> ## Save a variable
-> test <- c(1,2,3)
-> save(test, file="test.Rdat")
-> ## load a variable
-> load("test.Rdat")
->
-> ## Delete a variable
-> rm(test)
-> ## Free unused memory
-> gc()
 ```
 
-The power of R stands in the fact that it benefits from a huge community of users. Users make packages available to the community. I mentioned in session 1 two repositories which are [CRAN](https://cran.r-project.org/web/packages/available_packages_by_date.html) and [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software). To install a package from CRAN or Bioconductor, you will do it from the R console (other ways to install packages are not covered here). For CRAN, you will use the function **install.packages** and for Bioconductor, you will use the package [BiocManager](https://cran.r-project.org/web/packages/BiocManager/index.html). A package can be uninstalled with **remove.packages**. Finally, a package is loaded in R with the function **library**.
+**Exercise 25:**
+
+  + List all variables present in the current session with *ls()*
+  + Save a variable test <- c(1,2,3) with *save*. Look at the options *?save*.
+  + Load the saved variable into the environment with *load*.
+  + Delete the variable with *rm*.
+  + Free the unused memory with *gc()* (garbage collector).
+
+<br>
+
+The power of R stands in the fact that it benefits from a huge community of users. Users make packages available to the community. I mentioned two repositories which are [CRAN](https://cran.r-project.org/web/packages/available_packages_by_date.html) and [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software). To install a package from CRAN or Bioconductor, you will do it from the R console (other ways to install packages are not covered here). For CRAN, you will use the function **install.packages** and for Bioconductor, you will use the package [BiocManager](https://cran.r-project.org/web/packages/BiocManager/index.html). A package can be uninstalled with **remove.packages**. Finally, a package is loaded in R with the function **library**.
  
 Packages are dependent on the R and/or Bioconductor version. You will see that some code that was running fine on one R version will give you some errors on others. This is because the community is active and publishes updates regularly. R gives a major release every Spring, with several patches along the year, and Bioconductor is updated every 6 months. You can check your R version with **R.Version()** and the version of a particular package with **packageVersion**. 
 It is also useful to know where packages are installed,  use **.libPaths()**.  
@@ -40,26 +36,17 @@ It is also useful to know where packages are installed,  use **.libPaths()**.
 > ## Install a package from CRAN
 > install.packages("ggplot2", dependencies = TRUE)
 > install.packages("BiocManager", dependencies = TRUE)
->
-> ## Load the package BiocManager
-> library("BiocManager")
->
-> ## Install the Bioconductor package "DESeq2" and "edgeR"
-> install("DESeq2")
-> install("edgeR")
->
-> ## Remove the package edgeR
-> remove.packages("edgeR")
->
-> ## Check your R version
-> R.Version()
->
-> ## check edgeR package version
-> packageVersion("edgeR")
->
-> ## Check where the packages were installed
-> .libPaths() 
 ```
+
+**Exercise 26:**
+
+  + Load the package BiocManager with *library*.
+  + Install the Bioconductor package "DESeq2" and "edgeR" with *install*.
+  + Remove the package edgeR with *remove.packages*.
+  + Check your R version with *R.Version()*
+  + Check 'DESeq2' package version with *packageVersion*.
+  + Check where the packages were installed with '.libPaths()'.
+
 
 There are different ways to get help in R. You can check the documentation of a particular function with **?myfunction** or **help**. If you do not remember the exact name of a function, you can use **apropos** which will list every function containing the word that you gave as parameter. You can see an example code with the function **example**. You can also use a web browser to look for documentation with **help.start()**. The R community also provides tutorials called **vignette**. You can see a list of vignettes with the function **vignette()** and visualize a particular one with **vignette("mypackagename")**. You can also see all available functions of a package by using the double columns "**mypackage::**" and pressing tab.
 
@@ -70,27 +57,17 @@ There are different ways to get help in R. You can check the documentation of a 
 >
 > ## Check all the functions available in edgeR (using the tab command)
 > DESeq2::
->
-> ## Start the R documentation page
-> help.start()
->
-> ## Get help on the function DESeqDataSetFromMatrix
-> ?DESeqDataSetFromMatrix
-> help("DESeqDataSetFromMatrix")
->
-> ## Visualize an example using DESeqDataSetFromMatrix
-> example("DESeqDataSetFromMatrix")
->
-> ## Find all functions using the string 'write'
-> apropos("write")
->
-> ## See all available vignette
-> vignette()
-> ## Check a particular vignette
-> vignette("DESeq2")  
 ```
 
+**Exercise 27:**
 
+  + Start the R documentation page with *help.start()*.
+  + Get help on the function DESeqDataSetFromMatrix with *?* or *help*.
+  + Visualize an example using DESeqDataSetFromMatrix with *example*.
+  + Find all functions using the string 'write' with *apropos*.
+  + See all available vignette with *vignette()*.
+  + Check the DESeq2 vignette with *vignette*.
+  
 Finally, all the commands that you entered can be retrieved with the function **history**. To quit R enter **q()**. If you enter **yes**, you can save your R session which is actually very nice to not have to enter again all your commands.
 
 
