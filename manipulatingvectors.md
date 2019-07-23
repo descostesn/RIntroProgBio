@@ -11,23 +11,20 @@ Several functions enable to compare and manipulate vectors:
 > vec4 <- c(2,4,5,5,4,1)
 > vec5 <- c("A", "A", "C", "T", "G", "T")
 >
-> ## Verify if all the values of vec2 are higher than the values of vec1
-> vec2 > vec1
-> all(vec2 > vec1)
->
-> ## Verify if all the values of vec3 are equal to the values of vec1
-> vec1 == vec3
-> all.equal(vec1, vec3)
-> isTRUE(all.equal(vec1, vec3))
-> all.equal(vec1, vec1)
->
 > ## Get the number of elements of a vector (or a list)
 > length(vec2)
 ```
 <br>
 
-**Exercise 14:**
+**Exercise 15:**
 
+  + Verify if all the values of vec2 are higher than the values of vec1 with *all*.
+  + Verify if all the values of vec3 are equal to the values of vec1 with *all.equal*.
+  + Verify if any of the value of vec3 is higher than the values of vec1 with *any*.
+  + Find the duplicated values of vec4 with *duplicated*.
+  + Find if any of the values of vec4 or vec5 are duplicated with *anyDuplicated*.
+  + Remove duplicated values from vec4 and vec5 with *unique*.
+  + Make the elements of vec5 unique with *make.unique*.
   + Create a list 'list_vec' with the vectors vec1 to vec4
   + Use a for loop to print each vector
   + Modify the for loop to print from vec2 to vec4 (omitting vec1)
@@ -35,7 +32,7 @@ Several functions enable to compare and manipulate vectors:
 
 
 <br>
-**TIP**: If you want to compare two values, use also the isTRUE(all.equal()) form. The reason is that the way R stores floating values in memory can be tricky. Test the code below:
+**TIP**: If you want to compare two values, use also the isTRUE(all.equal()) form. The reason is that the way R stores floating values in memory can be tricky. Test the code below and identify what is wrong:
 <br>
 
 ```
@@ -53,26 +50,6 @@ Several functions enable to compare and manipulate vectors:
 > all.equal(x[4],y[4])
 ```
 
-Going back to our vectors:
-
-
-```
-> ## Are Some Values TRUE
-> vec3 > vec1
-> any(vec3 > vec1)
->
-> ## Are some values duplicated
-> duplicated(vec4)
-> anyDuplicated(vec4)
-> anyDuplicated(vec5)
->
-> ## Remove duplicated values
-> unique(vec4)
-> unique(vec5)
->
->## Make the element of a vector unique
-> make.unique(vec5) 
-```
 
 R represents missing values by NA (**N**ot **A**vailable). You will very often find NA values when reading public data or your own table. The reasons for having missing values can be multiple: Lack of experimental data, error in reading functions, etc. A lot of functions in R have a parameter to handle missing values, usually it is denoted by 'na.rm' (rm = remove). Two important functions for handling NA values are **is.na** and **anyNA**:
 
@@ -104,6 +81,14 @@ Very often it is necessary to find the elements of a vector satisfying a particu
 ```
 > ## Find the elements of vec4 that are higher than 3
 > which(vec4 > 3)
+```
+
+<br>
+**Exercise 16:**
+
+  + Find the elements of vec4 that are higher than 3 and lower than 5
+  + Find the index of the minimum and maximum of vec4 with *which.min* and *which.max*.
+
 > ## Find the elements of vec4 that are higher than 3 and lower than 5
 > which(vec4 > 3 & vec4 < 5)
 >
