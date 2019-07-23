@@ -13,24 +13,18 @@ It can be very useful to convert between types. For instance, you will very ofte
 > ## Conversion of vector types
 > numvec_conv <- as.numeric(charvec)
 > is(numvec_conv)
-> charvec_conv <- as.character(numvec_conv)
-> is(charvec)
->
-> ## Conversion of a numeric vector into a factor
-> as.factor(numvec)
 >
 > ## Creation of a matrix
 > mat <- matrix(data=1:6, nrow=2, ncol=3, byrow=T)
->
-> ## Conversion of matrix to data.frame
-> df_conv <- as.data.frame(mat)
-> is(df_conv)
->
-> ## Conversion of a data.frame to a matrix
-> mat_conv <- as.matrix(df_conv)
-> is(mat_conv)
->
-> ## Conversion of a matrix to a list
-> list_conv <- as.list(mat)
-> is(list_conv) 
 ```
+
+<br>
+
+**Exercise 21**:
+
+  + Convert *numvec_conv* to characters with *as.character*
+  + Convert *numvec_conv* to a factor with &*as.factor*
+  + Convert *mat* to a dataframe with *as.data.frame*
+  + Convert the result back to a matrix with as.****** (you can guess what to use at this point :)
+  + Convert *mat* to a list
+  
