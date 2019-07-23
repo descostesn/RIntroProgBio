@@ -10,11 +10,13 @@ It is useful to be able to compare collections of information. For instance, you
 > vec2 <- c("CD86", "CD19", "CD4")
 > indexes <- match(vec1, vec2)
 > vec1[indexes]
->
-> ## Peform intersection on vectors
-> vec3 <- c("Nanog", "CD19", "Oct4")
-> intersect(vec1, vec3)
->
-> ## Peform union on vectors
-> union(vec1, vec3)
 ```
+
+<br>
+
+**Exercise 17:
+
+  + Create a vector vec3 <- c("Nanog", "CD19", "Oct4")
+  + Perform the intersection of vec1 and vec3 with *intersect*.
+  + Perform the	union of vec1 and vec3 with *union*.
+  
