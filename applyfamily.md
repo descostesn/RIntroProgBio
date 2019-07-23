@@ -1,7 +1,7 @@
 # Apply Family
 
 
-We saw in session 2 how to parse structures of data with "for" loops. As a reminder, this is how you would print the column mean values of a matrix and of a list using "for":
+We saw how to parse structures of data with "for" loops. As a reminder, this is how you would print the column mean values of a matrix and of a list using "for":
 
 
 ```
@@ -79,7 +79,7 @@ cat("The mean value of ", y, " is ", mean(y), "\n")
 
 <br>
 
-**Exercise 18:**
+**Exercise 22:**
 
    + Create two numeric vectors of equal size
    + Use mapply to perform a 2 by 2 sum of values
