@@ -6,28 +6,19 @@ Many functions enable to manipulate characters. Here only a few are presented. T
 
 ```
 > simpleDNASeq <- "AACATGACAGTTAGGACAGATACAATAATATATACAGAGACAGACAGACAGATTATATAC"
+>
 > ## Separate the characters wih the function strsplit
 > simpleDNASeq_vec <- unlist(strsplit(simpleDNASeq,""))
->
-> ## Find the indexes of 'A'
-> grep("A", simpleDNASeq_vec)
-> ## Is A present at a particular location
-> grepl("A", simpleDNASeq_vec)
->
->## Find a submotif in the sequence
-> gregexpr("AA", simpleDNASeq)
->
-> ## Replace the first occurrence of "A" by "C"
-> sub("A", "C", simpleDNASeq)
-> ## Replace all occurrences of "A" by "C"
-> gsub("A", "C", simpleDNASeq)
->
-> ## Extract nucleotides from position 4 to 8
-> substr(simpleDNASeq,4,8)
->
-> ## Concatenate two sequences
-> paste("AA", "CT", sep="")
-> paste("AA", "CT", sep=";")
-> ## paste0 avoids using the empty separator
-> paste0("AA", "CT")
 ```
+
+**Exercise 14:**
+
+Using the simpleDNASeq	character string:
+
+  + Find the indexes of 'A' with *grep*.
+  + Try the same command with *grepl* and see what it does.
+  + Find a submotif 'AA' with the *gregexpr* command.
+  + Replace the first occurrence of "A" by "C" with *sub*.
+  + Replace all occurrences of "A" by "C" with *gsub*.
+  + Extract nucleotides from position 4 to 8 with *substr*.
+  + Concatenate two sequences with *paste*. Look at *?paste0* and replace the previous command with it.
