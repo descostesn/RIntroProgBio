@@ -263,16 +263,66 @@ summary(randomvec1)
 
 
 
-TO COMPLETE
+# Exercise 14:
 
+```
+## Find the indexes of 'A' with *grep*
+grep("A", simpleDNASeq_vec)
 
+## Try the same command with *grepl* and see what it does
+## The command answers: Is A present at a particular location
+ grepl("A", simpleDNASeq_vec)
 
+## Find a submotif 'AA' with the *gregexpr* command
+gregexpr("AA", simpleDNASeq)
 
+## Replace the first occurrence of "A" by "C" with sub
+sub("A", "C", simpleDNASeq)
+
+## Replace all occurrences of "A" by "C" with gsub
+gsub("A", "C", simpleDNASeq)
+
+## Extract nucleotides from position 4 to 8 with substr
+substr(simpleDNASeq,4,8)
+
+## Concatenate two sequences with paste and paste0
+paste("AA", "CT", sep="")
+paste("AA", "CT", sep=";")
+paste0("AA", "CT")
+```
 
 
 # Exercise 15:
 
 ```
+##  Verify if all the values of vec2 are higher than the values of vec1	with *all*
+vec2 > vec1
+all(vec2 > vec1)
+
+## Verify if all the values of vec3 are equal to the values of vec1 with *all.equal*
+vec1 == vec3
+all.equal(vec1, vec3)
+isTRUE(all.equal(vec1, vec3))
+all.equal(vec1, vec1)
+
+## Verify if any of the value of vec3 is higher than the values of vec1 with *any*
+vec3 > vec1
+any(vec3 > vec1)
+
+## Find the duplicated	values of vec4 with *duplicated*
+duplicated(vec4)
+
+## Find if any	of the values of vec4 or vec5 are duplicated with *anyDuplicated*
+anyDuplicated(vec4)
+anyDuplicated(vec5)
+
+## Remove duplicated values from vec4 and vec5	with *unique*
+unique(vec4)
+unique(vec5)
+
+## Make the elements of vec5 unique with *make.unique*
+make.unique(vec5)
+
 ## Create a list 'list_vec' with the vectors vec1 to vec4
 vec1 <- c(1,2,3,4)
 vec2 <- c(2,3,4,5)
@@ -311,8 +361,32 @@ for(i in seq_len(length(list_vec)))
  print(list_vec[i])
 ```
 
-
 # Exercise 17:
+
+```
+## Find the elements of vec4 that are higher than 3 and lower than 5
+which(vec4 > 3 & vec4 < 5)
+
+## Find the index of the minimum and maximum of vec4 with *which.min* and *which.max*
+which.min(vec4)
+which.max(vec4)
+```
+
+# Exercise 18:
+
+```
+## Create a vector vec3 <- c("Nanog", "CD19", "Oct4")
+vec3 <- c("Nanog", "CD19", "Oct4")
+
+## Perform the	intersection of	vec1 and vec3 with *intersect*
+intersect(vec1, vec3)
+
+## Peform union on vectors
+union(vec1, vec3)
+```
+
+
+# Exercise 19:
 
 ```
 ## Define the names of rows and columns
@@ -336,7 +410,7 @@ rownames(matrix1)
 colnames(matrix1)
 ```
 
-# Exercise 18:
+# Exercise 20:
 
 ```
 ## Combine matrix 1 and 2 by row
@@ -345,6 +419,30 @@ rbind(matrix1, matrix2)
 ## Combine matrix 1 and 2 by column
 cbind(matrix1, matrix2)
 ```
+
+# Exercise 21:
+
+```
+## Convert *numvec_conv* to characters	with *as.character*
+charvec_conv <- as.character(numvec_conv)
+is(charvec)
+
+## Convert *numvec_conv* to a factor with *as.factor*
+as.factor(numvec)
+
+## Convert *mat* to a dataframe with *as.data.frame*
+df_conv <- as.data.frame(mat)
+is(df_conv)
+
+## Convert the	result back to a matrix
+mat_conv <- as.matrix(df_conv)
+is(mat_conv)
+
+## Convert *mat* to a list
+list_conv <- as.list(mat)
+is(list_conv)
+```
+
 
 
 # Exercise 19:
