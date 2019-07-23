@@ -261,7 +261,16 @@ mean(vector_10)
 summary(randomvec1)
 ```
 
-# Exercise 14:
+
+
+TO COMPLETE
+
+
+
+
+
+
+# Exercise 15:
 
 ```
 ## Create a list 'list_vec' with the vectors vec1 to vec4
@@ -283,7 +292,7 @@ for(i in seq_len(length(list_vec)-1))
     print(isTRUE(all.equal(list_vec[[i]], list_vec[[j]])))
 ```
 
-#  Exercise 15:
+#  Exercise 16:
 
 ```
 ## Remove duplicated values from vec5 and display it in reverted order
@@ -303,7 +312,7 @@ for(i in seq_len(length(list_vec)))
 ```
 
 
-# Exercise 16:
+# Exercise 17:
 
 ```
 ## Define the names of rows and columns
@@ -327,7 +336,7 @@ rownames(matrix1)
 colnames(matrix1)
 ```
 
-# Exercise 17:
+# Exercise 18:
 
 ```
 ## Combine matrix 1 and 2 by row
@@ -338,7 +347,7 @@ cbind(matrix1, matrix2)
 ```
 
 
-# Exercise 18:
+# Exercise 19:
 
 ```
 ## Create two numeric vectors
