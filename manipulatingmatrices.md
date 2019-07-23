@@ -15,9 +15,9 @@ You have already seen some functions that you can use on matrices:
 ```
 
 <br>
-**Exercise 16:**
+**Exercise 19:**
 
-  + Define the names of rows and columns as gene1 to gene4 and condition1 to condition3
+  + Define the names of the rows of matrix1 as 'gene1 to gene4' and columns as 'condition1 to condition3'
   + Print the number of rows and columns of matrix1 (one command)
   + Print the number of rows
   + Print the number of columns
@@ -57,7 +57,7 @@ You can also combine matrices by rows or columns:
 
 <br>
 
-**Exercise 17:**
+**Exercise 20:**
 
   + Combine matrix 1 and 2 by row using 'rbind'
   + Combine matrix 1 and 2 by column using 'cbind'
