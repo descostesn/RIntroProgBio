@@ -9,44 +9,25 @@ In this section we will create a directory and several files that we will manipu
 >
 > ## Change your working environment to the just created directory
 > setwd("./training_files_manipulation")
->
-> ## Create an empty file
-> file.create("test_1.txt")
->
-> ## Verify if a file exists
-> file.exists("test_1.txt")
-> file.exists("test_2.txt")
->
-> ## Remove a file
-> file.remove("test_1.txt")
-> ## Create an empty file
-> file.create("test_1.txt")
->
-> ## copy a file
-> file.copy("test_1.txt", "test_2.txt")
->
-> ## Rename a file
-> file.rename("test_2.txt", "test_3.txt")
->
-> ## Retrieve directory of file
-> mock_example <- "/home/my_name/Documents/myfile.txt"
-> dirname(mock_example)
->
-> ## Retrieve file name from file path
-> basename(mock_example)
->
-> ## Lists files into a directory
-> setwd("..") ## Go up in the directory tree
-> list.files("./training_files_manipulation")
-> list.files("./training_files_manipulation", full.names = TRUE)
->
-> ## Dete directory
-> unlink("./training_files_manipulation", recursive = TRUE)
 ```
+
+**Exercise 23**
+
+  + Create an empty file 'test_1.txt' with *file.create*.
+  + Verify if 'test_1.txt' and 'test_2.txt' exist with *file.exists*.
+  + Remove 'test_1.txt' with *file.remove*
+  + Create again 'test_1.txt'.
+  + Copy 'test_1.txt' to the destination file 'test_2.txt' with *file.copy*.
+  + Rename 'test_2.txt' to 'test_3.txt' with *file.rename*.
+  + Retrieve the directory path of "/home/my_name/Documents/myfile.txt" with *dirname*.
+  + Retrieve the above file name with *basename*.
+  + Go up one folder with *setwd("..")*.
+  + List the files of the directory 'training_files_manipulation' with *list.files*.
+  + Delete the 'training_files_manipulation' directory with *unlink*.
 
 I mostly use **file.list** with the option full.names = TRUE to load the paths to the files that I want to process, **dir.create** with the option recursive = TRUE to create output folders, and the functions **dirname/basename**.
 
-Important functions to always have in mind are those used to read and write files. The files can be of different formats and you need to know a couple of tricks. Below is a full example creating the content and writing it to files. The different files are then read and their content is displayed. 
+Important functions to always have in mind are those used to read and write files. The files can be of different formats and you need to know a couple of tricks. Below is a full example creating content and writing it to files. The different files are then read and their content is displayed. 
 
 
 ```
@@ -63,23 +44,15 @@ Important functions to always have in mind are those used to read and write file
 > ## Writing it in a tabulation separated text file (see ?write.table)
 > write.table(DEgenes, file="DEgenes.txt", sep="\t", quote=FALSE, 
 row.names = TRUE, col.names = TRUE)
->
-> ## Writing it in a csv file (same as before, only the function name changes)
-> write.csv(DEgenes, file="DEgenes.csv")
->
-> ## Reading the text file
-> fi_txt <- read.table("DEgenes.txt", sep="\t", header = TRUE, row.names = 1, 
-+ stringsAsFactors = FALSE)
-> fi_txt
->
-> ## Reading the csv file
-> fi_csv <- read.csv("DEgenes.csv", header = TRUE, row.names = 1)
-> fi_csv
->
-> ## Reading the lines of a file
-> fi_lines <- readLines("DEgenes.txt")
-> fi_lines
->
-> ## Deleting files
-> file.remove(c("DEgenes.txt", "DEgenes.csv")) 
 ```
+
+**Exercise 24**:
+
+  + Write *DEgenes* to a csv file (DEgenes.csv) with *write.csv*.
+  + Read *DEgenes.txt* with *read.table*. Look at the options sep, header and row.names in ?read.table.
+  + Read the 'DEgenes.csv' file with *read.csv*.
+  + Read the lines of 'DEgenes.txt' with *readLines*.
+  + Delete the files 'DEgenes.txt' and 'DEgenes.csv' in one command with file.remove (create a vector with the file names)
+
+
+
