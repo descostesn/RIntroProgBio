@@ -14,7 +14,7 @@ It is useful to be able to compare collections of information. For instance, you
 
 <br>
 
-**Exercise 17:
+**Exercise 18:
 
   + Create a vector vec3 <- c("Nanog", "CD19", "Oct4")
   + Perform the intersection of vec1 and vec3 with *intersect*.
