@@ -346,7 +346,7 @@ for(i in seq_len(length(list_vec)-1))
 
 ```
 ## Remove duplicated values from vec5 and display it in reverted order
-rev(vec5[-duplicated(vec5)])
+rev(vec5[!duplicated(vec5)])
 
 ## Add vec6 to list_vec
 x <- NA
